@@ -1,0 +1,263 @@
+[
+  {
+    "id": "ARCH-01",
+    "question": "How does an order get created?",
+    "repository_id": "rag_fixture_a",
+    "category": "order_flow",
+    "expected_start_symbols": [
+      "orders.service.OrderService.create_order",
+      "orders.router.create_order_endpoint"
+    ],
+    "expected_edges": [
+      [
+        "orders.service.OrderService.create_order",
+        "inventory.service.InventoryService.check_stock"
+      ],
+      [
+        "orders.service.OrderService.create_order",
+        "payments.service.PaymentService.process_payment"
+      ],
+      [
+        "payments.service.PaymentService.process_payment",
+        "payments.gateway.StripeGateway.charge_card"
+      ],
+      [
+        "orders.service.OrderService.create_order",
+        "database.repository.OrderRepository.save_order"
+      ]
+    ],
+    "is_negative": false
+  },
+  {
+    "id": "ARCH-02",
+    "question": "What happens when a customer places an order?",
+    "repository_id": "rag_fixture_a",
+    "category": "order_flow",
+    "expected_start_symbols": [
+      "orders.service.OrderService.create_order",
+      "orders.router.create_order_endpoint"
+    ],
+    "expected_edges": [
+      [
+        "orders.service.OrderService.create_order",
+        "inventory.service.InventoryService.check_stock"
+      ],
+      [
+        "orders.service.OrderService.create_order",
+        "payments.service.PaymentService.process_payment"
+      ],
+      [
+        "payments.service.PaymentService.process_payment",
+        "payments.gateway.StripeGateway.charge_card"
+      ],
+      [
+        "orders.service.OrderService.create_order",
+        "database.repository.OrderRepository.save_order"
+      ]
+    ],
+    "is_negative": false
+  },
+  {
+    "id": "ARCH-03",
+    "question": "Where is inventory checked during order creation?",
+    "repository_id": "rag_fixture_a",
+    "category": "order_flow",
+    "expected_start_symbols": [
+      "orders.service.OrderService.create_order",
+      "inventory.service.InventoryService.check_stock"
+    ],
+    "expected_edges": [
+      [
+        "orders.service.OrderService.create_order",
+        "inventory.service.InventoryService.check_stock"
+      ],
+      [
+        "orders.service.OrderService.create_order",
+        "payments.service.PaymentService.process_payment"
+      ],
+      [
+        "payments.service.PaymentService.process_payment",
+        "payments.gateway.StripeGateway.charge_card"
+      ],
+      [
+        "orders.service.OrderService.create_order",
+        "database.repository.OrderRepository.save_order"
+      ]
+    ],
+    "is_negative": false
+  },
+  {
+    "id": "ARCH-04",
+    "question": "Where is payment processed during order creation?",
+    "repository_id": "rag_fixture_a",
+    "category": "order_flow",
+    "expected_start_symbols": [
+      "payments.service.PaymentService.process_payment",
+      "orders.service.OrderService.create_order"
+    ],
+    "expected_edges": [
+      [
+        "payments.service.PaymentService.process_payment",
+        "payments.gateway.StripeGateway.charge_card"
+      ]
+    ],
+    "is_negative": false
+  },
+  {
+    "id": "ARCH-05",
+    "question": "Where is the order persisted?",
+    "repository_id": "rag_fixture_a",
+    "category": "order_flow",
+    "expected_start_symbols": [
+      "database.repository.OrderRepository.save_order",
+      "orders.service.OrderService.create_order"
+    ],
+    "expected_edges": [],
+    "is_negative": false
+  },
+  {
+    "id": "ARCH-06",
+    "question": "How does card payment processing work?",
+    "repository_id": "rag_fixture_a",
+    "category": "payment_flow",
+    "expected_start_symbols": [
+      "payments.service.PaymentService.process_payment",
+      "payments.gateway.StripeGateway.charge_card"
+    ],
+    "expected_edges": [
+      [
+        "payments.service.PaymentService.process_payment",
+        "payments.gateway.StripeGateway.charge_card"
+      ]
+    ],
+    "is_negative": false
+  },
+  {
+    "id": "ARCH-07",
+    "question": "Which method performs the actual card charge?",
+    "repository_id": "rag_fixture_a",
+    "category": "payment_flow",
+    "expected_start_symbols": [
+      "payments.gateway.StripeGateway.charge_card",
+      "payments.service.PaymentService.process_payment"
+    ],
+    "expected_edges": [],
+    "is_negative": false
+  },
+  {
+    "id": "ARCH-08",
+    "question": "How does PaymentService process a payment?",
+    "repository_id": "rag_fixture_a",
+    "category": "payment_flow",
+    "expected_start_symbols": [
+      "payments.service.PaymentService.process_payment"
+    ],
+    "expected_edges": [
+      [
+        "payments.service.PaymentService.process_payment",
+        "payments.gateway.StripeGateway.charge_card"
+      ]
+    ],
+    "is_negative": false
+  },
+  {
+    "id": "ARCH-09",
+    "question": "Where is stock availability checked?",
+    "repository_id": "rag_fixture_a",
+    "category": "inventory",
+    "expected_start_symbols": [
+      "inventory.service.InventoryService.check_stock"
+    ],
+    "expected_edges": [],
+    "is_negative": false
+  },
+  {
+    "id": "ARCH-10",
+    "question": "Which method verifies whether an item is in stock?",
+    "repository_id": "rag_fixture_a",
+    "category": "inventory",
+    "expected_start_symbols": [
+      "inventory.service.InventoryService.check_stock"
+    ],
+    "expected_edges": [],
+    "is_negative": false
+  },
+  {
+    "id": "ARCH-11",
+    "question": "How are login credentials verified?",
+    "repository_id": "rag_fixture_a",
+    "category": "authentication",
+    "expected_start_symbols": [
+      "auth.service.AuthService.verify_credentials"
+    ],
+    "expected_edges": [
+      [
+        "auth.service.AuthService.verify_credentials",
+        "auth.service.hash_password"
+      ]
+    ],
+    "is_negative": false
+  },
+  {
+    "id": "ARCH-12",
+    "question": "Where does password verification happen?",
+    "repository_id": "rag_fixture_a",
+    "category": "authentication",
+    "expected_start_symbols": [
+      "auth.service.hash_password",
+      "auth.service.AuthService.verify_credentials"
+    ],
+    "expected_edges": [],
+    "is_negative": false
+  },
+  {
+    "id": "ARCH-13",
+    "question": "Where is an order saved?",
+    "repository_id": "rag_fixture_a",
+    "category": "repository_database",
+    "expected_start_symbols": [
+      "database.repository.OrderRepository.save_order",
+      "orders.service.OrderService.create_order"
+    ],
+    "expected_edges": [],
+    "is_negative": false
+  },
+  {
+    "id": "ARCH-14",
+    "question": "Which method persists an order?",
+    "repository_id": "rag_fixture_a",
+    "category": "repository_database",
+    "expected_start_symbols": [
+      "database.repository.OrderRepository.save_order"
+    ],
+    "expected_edges": [],
+    "is_negative": false
+  },
+  {
+    "id": "ARCH-15",
+    "question": "How does OAuth login work?",
+    "repository_id": "rag_fixture_a",
+    "category": "negative_unsupported",
+    "expected_start_symbols": [],
+    "expected_edges": [],
+    "is_negative": true
+  },
+  {
+    "id": "ARCH-16",
+    "question": "How are Kafka events processed?",
+    "repository_id": "rag_fixture_a",
+    "category": "negative_unsupported",
+    "expected_start_symbols": [],
+    "expected_edges": [],
+    "is_negative": true
+  },
+  {
+    "id": "ARCH-17",
+    "question": "How does email notification delivery work?",
+    "repository_id": "rag_fixture_a",
+    "category": "negative_unsupported",
+    "expected_start_symbols": [],
+    "expected_edges": [],
+    "is_negative": true
+  }
+]

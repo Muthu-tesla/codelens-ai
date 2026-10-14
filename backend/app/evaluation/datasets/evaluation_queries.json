@@ -1,0 +1,166 @@
+[
+  {
+    "id": "Q01",
+    "query": "How are customer card payments charged and billed?",
+    "expected_symbols": [
+      "payments.service.PaymentService.process_payment",
+      "payments.gateway.StripeGateway.charge_card"
+    ],
+    "category": "payments",
+    "description": "Locate payment charge execution logic"
+  },
+  {
+    "id": "Q02",
+    "query": "Where does the application create a new customer purchase order?",
+    "expected_symbols": [
+      "orders.service.OrderService.create_order"
+    ],
+    "category": "orders",
+    "description": "Find order initialization and creation"
+  },
+  {
+    "id": "Q03",
+    "query": "How are user login credentials verified and session tokens generated?",
+    "expected_symbols": [
+      "auth.service.AuthService.login"
+    ],
+    "category": "authentication",
+    "description": "Locate user login and session credential issuance"
+  },
+  {
+    "id": "Q04",
+    "query": "Where is the incoming bearer token validated and parsed for identity?",
+    "expected_symbols": [
+      "auth.service.AuthService.authenticate_token"
+    ],
+    "category": "authentication",
+    "description": "Locate token validation logic"
+  },
+  {
+    "id": "Q05",
+    "query": "How does the system issue money back or refund a settled transaction?",
+    "expected_symbols": [
+      "payments.service.PaymentService.issue_refund"
+    ],
+    "category": "payments",
+    "description": "Find payment refund workflow"
+  },
+  {
+    "id": "Q06",
+    "query": "Where are warehouse items placed on hold during checkout?",
+    "expected_symbols": [
+      "inventory.service.InventoryService.reserve_stock"
+    ],
+    "category": "inventory",
+    "description": "Locate warehouse item hold reservation"
+  },
+  {
+    "id": "Q07",
+    "query": "How do we check if enough product stock is currently available for purchase?",
+    "expected_symbols": [
+      "inventory.service.InventoryService.check_availability"
+    ],
+    "category": "inventory",
+    "description": "Find inventory stock availability verification"
+  },
+  {
+    "id": "Q08",
+    "query": "Where are new client accounts created and onboarded?",
+    "expected_symbols": [
+      "users.service.UserService.register_user"
+    ],
+    "category": "users",
+    "description": "Find user onboarding and registration"
+  },
+  {
+    "id": "Q09",
+    "query": "Where is email syntax checked for proper address formatting?",
+    "expected_symbols": [
+      "users.service.validate_email_format"
+    ],
+    "category": "validation",
+    "description": "Locate email format validation helper"
+  },
+  {
+    "id": "Q10",
+    "query": "How is the total purchase price calculated including discounts and tax?",
+    "expected_symbols": [
+      "orders.service.OrderService.calculate_order_total"
+    ],
+    "category": "orders",
+    "description": "Find order pricing and discount calculations"
+  },
+  {
+    "id": "Q11",
+    "query": "Where are finalized orders saved and persisted into the relational database?",
+    "expected_symbols": [
+      "orders.repository.OrderRepository.save"
+    ],
+    "category": "database persistence",
+    "description": "Find order persistence in database"
+  },
+  {
+    "id": "Q12",
+    "query": "How are warehouse inventory quantities updated in storage?",
+    "expected_symbols": [
+      "inventory.repository.InventoryRepository.update_stock_count"
+    ],
+    "category": "database persistence",
+    "description": "Find inventory count persistence"
+  },
+  {
+    "id": "Q13",
+    "query": "What handles voiding an existing order and restocking products?",
+    "expected_symbols": [
+      "orders.service.OrderService.cancel_order"
+    ],
+    "category": "orders",
+    "description": "Find order cancellation handler"
+  },
+  {
+    "id": "Q14",
+    "query": "Where is one-way cryptographic hashing applied to protect passwords?",
+    "expected_symbols": [
+      "auth.service.hash_password",
+      "auth.models.UserCredentials.verify_password"
+    ],
+    "category": "security",
+    "description": "Locate password hashing and verification"
+  },
+  {
+    "id": "Q15",
+    "query": "Where does the Stripe payment gateway integration execute card charges?",
+    "expected_symbols": [
+      "payments.gateway.StripeGateway.charge_card"
+    ],
+    "category": "payments",
+    "description": "Find Stripe gateway adapter"
+  },
+  {
+    "id": "Q16",
+    "query": "How is electronic transfer executed through PayPal digital wallet?",
+    "expected_symbols": [
+      "payments.gateway.PayPalGateway.execute_payment"
+    ],
+    "category": "payments",
+    "description": "Find PayPal integration adapter"
+  },
+  {
+    "id": "Q17",
+    "query": "Where are reserved warehouse products released back when checkout fails?",
+    "expected_symbols": [
+      "inventory.service.InventoryService.release_stock"
+    ],
+    "category": "inventory",
+    "description": "Locate inventory stock release"
+  },
+  {
+    "id": "Q18",
+    "query": "How can user account information, profile settings, and preferences be updated?",
+    "expected_symbols": [
+      "users.service.UserService.update_profile"
+    ],
+    "category": "users",
+    "description": "Find user profile modification logic"
+  }
+]

@@ -1,0 +1,190 @@
+[
+  {
+    "id": "REAL-01",
+    "question": "How does table insertion persist a new document in TinyDB?",
+    "repository_id": "tinydb",
+    "category": "function_call_relationships",
+    "expected_start_symbols": [
+      "tinydb.table.Table.insert"
+    ],
+    "expected_edges": [
+      [
+        "tinydb.table.Table.insert",
+        "tinydb.table.Table._get_next_id"
+      ],
+      [
+        "tinydb.table.Table._get_next_id",
+        "tinydb.table.Table._read_table"
+      ],
+      [
+        "tinydb.table.Table.insert",
+        "tinydb.table.Table._update_table"
+      ],
+      [
+        "tinydb.table.Table._update_table",
+        "tinydb.table.Table.clear_cache"
+      ]
+    ],
+    "is_negative": false
+  },
+  {
+    "id": "REAL-02",
+    "question": "How are documents searched in a table?",
+    "repository_id": "tinydb",
+    "category": "function_call_relationships",
+    "expected_start_symbols": [
+      "tinydb.table.Table.search"
+    ],
+    "expected_edges": [
+      [
+        "tinydb.table.Table.search",
+        "tinydb.table.Table._read_table"
+      ]
+    ],
+    "is_negative": false
+  },
+  {
+    "id": "REAL-03",
+    "question": "How does Table.count calculate matching documents?",
+    "repository_id": "tinydb",
+    "category": "function_call_relationships",
+    "expected_start_symbols": [
+      "tinydb.table.Table.count"
+    ],
+    "expected_edges": [
+      [
+        "tinydb.table.Table.count",
+        "tinydb.table.Table.search"
+      ],
+      [
+        "tinydb.table.Table.search",
+        "tinydb.table.Table._read_table"
+      ]
+    ],
+    "is_negative": false
+  },
+  {
+    "id": "REAL-04",
+    "question": "How does Table.truncate remove all documents from a table?",
+    "repository_id": "tinydb",
+    "category": "function_call_relationships",
+    "expected_start_symbols": [
+      "tinydb.table.Table.truncate"
+    ],
+    "expected_edges": [
+      [
+        "tinydb.table.Table.truncate",
+        "tinydb.table.Table._update_table"
+      ],
+      [
+        "tinydb.table.Table._update_table",
+        "tinydb.table.Table.clear_cache"
+      ]
+    ],
+    "is_negative": false
+  },
+  {
+    "id": "REAL-05",
+    "question": "Where is Table.remove used to delete matching documents?",
+    "repository_id": "tinydb",
+    "category": "function_call_relationships",
+    "expected_start_symbols": [
+      "tinydb.table.Table.remove"
+    ],
+    "expected_edges": [
+      [
+        "tinydb.table.Table.remove",
+        "tinydb.table.Table._update_table"
+      ],
+      [
+        "tinydb.table.Table._update_table",
+        "tinydb.table.Table.clear_cache"
+      ]
+    ],
+    "is_negative": false
+  },
+  {
+    "id": "REAL-06",
+    "question": "Which method serializes and writes JSON database state to disk?",
+    "repository_id": "tinydb",
+    "category": "data_persistence",
+    "expected_start_symbols": [
+      "tinydb.storages.JSONStorage.write"
+    ],
+    "expected_edges": [],
+    "is_negative": false
+  },
+  {
+    "id": "REAL-07",
+    "question": "Where does JSONStorage read and deserialize data from disk?",
+    "repository_id": "tinydb",
+    "category": "data_persistence",
+    "expected_start_symbols": [
+      "tinydb.storages.JSONStorage.read"
+    ],
+    "expected_edges": [],
+    "is_negative": false
+  },
+  {
+    "id": "REAL-08",
+    "question": "Where does TinyDB close the database and open storage handle?",
+    "repository_id": "tinydb",
+    "category": "symbol_discovery",
+    "expected_start_symbols": [
+      "tinydb.database.TinyDB.close",
+      "tinydb.storages.Storage.close",
+      "tinydb.storages.JSONStorage.close"
+    ],
+    "expected_edges": [],
+    "is_negative": false
+  },
+  {
+    "id": "REAL-09",
+    "question": "Where does touch ensure a storage file exists and make missing directories?",
+    "repository_id": "tinydb",
+    "category": "error_handling_utility",
+    "expected_start_symbols": [
+      "tinydb.storages.touch"
+    ],
+    "expected_edges": [],
+    "is_negative": false
+  },
+  {
+    "id": "REAL-10",
+    "question": "Where does the delete operation transform a document by deleting a field?",
+    "repository_id": "tinydb",
+    "category": "symbol_discovery",
+    "expected_start_symbols": [
+      "tinydb.operations.delete"
+    ],
+    "expected_edges": [],
+    "is_negative": false
+  },
+  {
+    "id": "REAL-11",
+    "question": "How does OAuth2 authentication login work?",
+    "repository_id": "tinydb",
+    "category": "negative_unsupported",
+    "expected_start_symbols": [],
+    "expected_edges": [],
+    "is_negative": true
+  },
+  {
+    "id": "REAL-12",
+    "question": "How are Kafka distributed streaming consumer events handled?",
+    "repository_id": "tinydb",
+    "category": "negative_unsupported",
+    "expected_start_symbols": [],
+    "expected_edges": [],
+    "is_negative": true
+  },
+  {
+    "id": "REAL-13",
+    "question": "Where is Redis connection pool clustering configured?",
+    "repository_id": "tinydb",
+    "category": "negative_unsupported",
+    "expected_start_symbols": [],
+    "expected_edges": [],
+    "is_negative": true
+  }
+]
