@@ -23,6 +23,11 @@ import {
 } from "@/lib/api";
 import {
   checkShowcaseHealth,
+  getInitialShowcaseFiles,
+  getInitialShowcaseRelationships,
+  getInitialShowcaseRepoStatus,
+  getInitialShowcaseSelectedRepoId,
+  getInitialShowcaseSymbols,
   getShowcaseFiles,
   getShowcaseMetadata,
   getShowcaseRelationships,
@@ -44,18 +49,26 @@ import { ErrorAlert } from "@/components/ErrorAlert";
 
 export default function DashboardPage() {
   // Global & API state
-  const [backendHealthy, setBackendHealthy] = useState<boolean | null>(null);
+  const [backendHealthy, setBackendHealthy] = useState<boolean | null>(() =>
+    isShowcaseMode() ? true : null
+  );
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   // Repository state
-  const [reposStatus, setReposStatus] = useState<RepositoryStatus[]>([]);
-  const [selectedRepoId, setSelectedRepoId] = useState<number | null>(null);
-  const [isLoadingRepos, setIsLoadingRepos] = useState(true);
+  const [reposStatus, setReposStatus] = useState<RepositoryStatus[]>(() =>
+    isShowcaseMode() ? getInitialShowcaseRepoStatus() : []
+  );
+  const [selectedRepoId, setSelectedRepoId] = useState<number | null>(() =>
+    isShowcaseMode() ? getInitialShowcaseSelectedRepoId() : null
+  );
+  const [isLoadingRepos, setIsLoadingRepos] = useState(() => !isShowcaseMode());
 
   // Files & Explorer state
-  const [files, setFiles] = useState<FileMetadata[]>([]);
+  const [files, setFiles] = useState<FileMetadata[]>(() =>
+    isShowcaseMode() ? getInitialShowcaseFiles() : []
+  );
   const [selectedFileFilter, setSelectedFileFilter] = useState<string | null>(null);
   const [isLoadingFiles, setIsLoadingFiles] = useState(false);
   const [leftTab, setLeftTab] = useState<"explorer" | "repos">("explorer");
@@ -67,13 +80,17 @@ export default function DashboardPage() {
   const [rightTab, setRightTab] = useState<"inspector" | "trace">("inspector");
 
   // Symbols state
-  const [symbols, setSymbols] = useState<CodeSymbol[]>([]);
+  const [symbols, setSymbols] = useState<CodeSymbol[]>(() =>
+    isShowcaseMode() ? getInitialShowcaseSymbols() : []
+  );
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedType, setSelectedType] = useState("all");
   const [isLoadingSymbols, setIsLoadingSymbols] = useState(false);
 
   // Relationships (Call Graph) state
-  const [callRelationships, setCallRelationships] = useState<CodeRelationship[]>([]);
+  const [callRelationships, setCallRelationships] = useState<CodeRelationship[]>(() =>
+    isShowcaseMode() ? getInitialShowcaseRelationships() : []
+  );
   const [isLoadingRelationships, setIsLoadingRelationships] = useState(false);
   const [relationshipsError, setRelationshipsError] = useState<string | null>(null);
 
@@ -101,7 +118,7 @@ export default function DashboardPage() {
     if (showcaseMode) {
       try {
         const health = await checkShowcaseHealth();
-        setBackendHealthy(health.status === "ok");
+        setBackendHealthy(health.status === "showcase" || health.status === "ok");
       } catch (err: unknown) {
         setBackendHealthy(false);
         setErrorMessage(err instanceof Error ? err.message : "Showcase health check failed");
@@ -320,7 +337,7 @@ export default function DashboardPage() {
 
         try {
           const health = await checkShowcaseHealth();
-          if (!ignore) setBackendHealthy(health.status === "ok");
+          if (!ignore) setBackendHealthy(health.status === "showcase" || health.status === "ok");
 
           const repos = await getShowcaseRepositories();
           const meta = getShowcaseMetadata();
@@ -333,8 +350,19 @@ export default function DashboardPage() {
 
           if (!ignore) {
             setReposStatus(statusList);
-            if (statusList.length > 0) {
-              setSelectedRepoId(statusList[0].repository.id);
+            const activeId = statusList.length > 0 ? statusList[0].repository.id : null;
+            setSelectedRepoId(activeId);
+            if (activeId) {
+              const [filesRes, symsRes, relsRes] = await Promise.all([
+                getShowcaseFiles(activeId).catch(() => ({ total_files: 0, files: [] })),
+                getShowcaseSymbols(activeId, { symbolType: "all", search: "" }).catch(() => []),
+                getShowcaseRelationships(activeId, "calls").catch(() => []),
+              ]);
+              if (!ignore) {
+                setFiles(filesRes.files || []);
+                setSymbols(symsRes || []);
+                setCallRelationships(relsRes || []);
+              }
             }
           }
         } catch (err: unknown) {

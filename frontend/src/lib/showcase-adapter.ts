@@ -7,6 +7,7 @@ import type {
   FileMetadata,
   Repository,
   RepositoryFilesResponse,
+  RepositoryStatus,
 } from "../types/api.ts";
 import type { ListSymbolsOptions } from "./api.ts";
 
@@ -112,6 +113,66 @@ export async function getShowcaseRepositories(): Promise<Repository[]> {
  */
 export function getShowcaseMetadata(): typeof repositoryData {
   return repositoryData;
+}
+
+/**
+ * Retrieve initial repository status list synchronously for prerendering and immediate hydration.
+ */
+export function getInitialShowcaseRepoStatus(): RepositoryStatus[] {
+  if (!isShowcaseMode()) return [];
+  const meta = repositoryData;
+  return [
+    {
+      repository: {
+        id: meta.id,
+        name: meta.name,
+        path: meta.path,
+        created_at: meta.created_at,
+      },
+      isIndexed: true,
+      symbolCount: meta.symbol_count,
+      fileCount: meta.file_count,
+    },
+  ];
+}
+
+/**
+ * Retrieve initial selected repository ID for showcase mode.
+ */
+export function getInitialShowcaseSelectedRepoId(): number | null {
+  if (!isShowcaseMode()) return null;
+  return repositoryData.id;
+}
+
+/**
+ * Retrieve initial files list synchronously for showcase mode.
+ */
+export function getInitialShowcaseFiles(): FileMetadata[] {
+  if (!isShowcaseMode()) return [];
+  return filesData.map((f) => ({
+    relative_path: f.relative_path,
+    extension: f.extension,
+    size_bytes: f.size_bytes,
+    line_count: f.line_count,
+  }));
+}
+
+/**
+ * Retrieve initial symbols list synchronously for showcase mode.
+ */
+export function getInitialShowcaseSymbols(): CodeSymbol[] {
+  if (!isShowcaseMode()) return [];
+  return (symbolsData as unknown as CodeSymbol[]) || [];
+}
+
+/**
+ * Retrieve initial call relationships synchronously for showcase mode.
+ */
+export function getInitialShowcaseRelationships(): CodeRelationship[] {
+  if (!isShowcaseMode()) return [];
+  return (relationshipsData as unknown as CodeRelationship[]).filter(
+    (r) => r.relationship_type.toLowerCase() === "calls"
+  );
 }
 
 /**

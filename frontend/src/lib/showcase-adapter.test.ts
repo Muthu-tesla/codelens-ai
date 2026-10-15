@@ -3,6 +3,11 @@ import assert from "node:assert/strict";
 
 import {
   checkShowcaseHealth,
+  getInitialShowcaseFiles,
+  getInitialShowcaseRelationships,
+  getInitialShowcaseRepoStatus,
+  getInitialShowcaseSelectedRepoId,
+  getInitialShowcaseSymbols,
   getShowcaseBenchmarkQueries,
   getShowcaseExplain,
   getShowcaseFiles,
@@ -155,5 +160,44 @@ describe("Static Showcase Adapter (Phase 4B.4)", () => {
     const negative = queries.filter((q) => q.is_negative);
     assert.strictEqual(positive.length, 10);
     assert.strictEqual(negative.length, 3);
+  });
+
+  test("initial showcase synchronous getters return populated TinyDB data when showcase is active", () => {
+    const orig = process.env.NEXT_PUBLIC_SHOWCASE_MODE;
+    try {
+      // 1. In disabled mode
+      delete process.env.NEXT_PUBLIC_SHOWCASE_MODE;
+      assert.deepStrictEqual(getInitialShowcaseRepoStatus(), []);
+      assert.strictEqual(getInitialShowcaseSelectedRepoId(), null);
+      assert.deepStrictEqual(getInitialShowcaseFiles(), []);
+      assert.deepStrictEqual(getInitialShowcaseSymbols(), []);
+      assert.deepStrictEqual(getInitialShowcaseRelationships(), []);
+
+      // 2. In enabled mode
+      process.env.NEXT_PUBLIC_SHOWCASE_MODE = "true";
+      const repos = getInitialShowcaseRepoStatus();
+      assert.strictEqual(repos.length, 1);
+      assert.strictEqual(repos[0].repository.id, 1);
+      assert.strictEqual(repos[0].repository.name, "tinydb");
+      assert.strictEqual(repos[0].isIndexed, true);
+      assert.strictEqual(repos[0].symbolCount, 314);
+      assert.strictEqual(repos[0].fileCount, 21);
+
+      assert.strictEqual(getInitialShowcaseSelectedRepoId(), 1);
+
+      const files = getInitialShowcaseFiles();
+      assert.strictEqual(files.length, 21);
+      assert.ok(files.some((f) => f.relative_path.includes("tinydb/database.py")));
+
+      const symbols = getInitialShowcaseSymbols();
+      assert.strictEqual(symbols.length, 314);
+      assert.ok(symbols.some((s) => s.qualified_name === "tinydb.table.Table.insert"));
+
+      const rels = getInitialShowcaseRelationships();
+      assert.strictEqual(rels.length, 226);
+      assert.ok(rels.every((r) => r.relationship_type.toLowerCase() === "calls"));
+    } finally {
+      process.env.NEXT_PUBLIC_SHOWCASE_MODE = orig;
+    }
   });
 });
