@@ -21,6 +21,17 @@ import {
   getRepositorySymbols,
   getSymbolDetail,
 } from "@/lib/api";
+import {
+  checkShowcaseHealth,
+  getShowcaseFiles,
+  getShowcaseMetadata,
+  getShowcaseRelationships,
+  getShowcaseRepositories,
+  getShowcaseSymbolDetail,
+  getShowcaseSymbols,
+  isShowcaseMode,
+  validateShowcaseData,
+} from "@/lib/showcase-adapter";
 import { Header } from "@/components/Header";
 import { RegisterModal } from "@/components/RegisterModal";
 import { RepositoryList } from "@/components/RepositoryList";
@@ -83,20 +94,72 @@ export default function DashboardPage() {
   const activeRepo = activeRepoStatus?.repository || null;
   const isIndexed = activeRepoStatus?.isIndexed ?? false;
 
+  const showcaseMode = isShowcaseMode();
+
   // 1. Health check
   const pingHealth = useCallback(async () => {
+    if (showcaseMode) {
+      try {
+        const health = await checkShowcaseHealth();
+        setBackendHealthy(health.status === "ok");
+      } catch (err: unknown) {
+        setBackendHealthy(false);
+        setErrorMessage(err instanceof Error ? err.message : "Showcase health check failed");
+      }
+      return;
+    }
     try {
       await checkBackendHealth();
       setBackendHealthy(true);
     } catch {
       setBackendHealthy(false);
     }
-  }, []);
+  }, [showcaseMode]);
 
   // 2. Load repositories & compute indexed status
   const loadRepositories = useCallback(
     async (selectId?: number) => {
       setIsLoadingRepos(true);
+      if (showcaseMode) {
+        try {
+          const val = validateShowcaseData();
+          if (!val.isValid) {
+            setBackendHealthy(false);
+            setErrorMessage(val.error || "Showcase dataset is missing or corrupted");
+            setIsLoadingRepos(false);
+            return;
+          }
+          setBackendHealthy(true);
+          const repos = await getShowcaseRepositories();
+          const meta = getShowcaseMetadata();
+          const statusList: RepositoryStatus[] = repos.map((repo) => ({
+            repository: repo,
+            isIndexed: true,
+            symbolCount: meta.symbol_count,
+            fileCount: meta.file_count,
+          }));
+          setReposStatus(statusList);
+          if (statusList.length > 0) {
+            const nextId =
+              selectId ||
+              (selectedRepoId && statusList.some((r) => r.repository.id === selectedRepoId)
+                ? selectedRepoId
+                : statusList[0].repository.id);
+            setSelectedRepoId(nextId);
+          } else {
+            setSelectedRepoId(null);
+          }
+        } catch (err: unknown) {
+          setBackendHealthy(false);
+          const msg = err instanceof Error ? err.message : "Failed to load showcase repository";
+          setErrorMessage(msg);
+        } finally {
+          setIsLoadingRepos(false);
+        }
+        return;
+      }
+
+      // Live mode
       try {
         const repos = await getRepositories();
         setBackendHealthy(true);
@@ -145,31 +208,35 @@ export default function DashboardPage() {
         setIsLoadingRepos(false);
       }
     },
-    [selectedRepoId]
+    [selectedRepoId, showcaseMode]
   );
 
   // 3. Load repository files
-  const loadFiles = useCallback(async (repoId: number) => {
-    setIsLoadingFiles(true);
-    try {
-      const data = await getRepositoryFiles(repoId);
-      setFiles(data.files || []);
-    } catch {
-      setFiles([]);
-    } finally {
-      setIsLoadingFiles(false);
-    }
-  }, []);
+  const loadFiles = useCallback(
+    async (repoId: number) => {
+      setIsLoadingFiles(true);
+      try {
+        const data = showcaseMode
+          ? await getShowcaseFiles(repoId)
+          : await getRepositoryFiles(repoId);
+        setFiles(data.files || []);
+      } catch {
+        setFiles([]);
+      } finally {
+        setIsLoadingFiles(false);
+      }
+    },
+    [showcaseMode]
+  );
 
   // 4. Load repository symbols with filters
   const loadSymbols = useCallback(
     async (repoId: number, type: string, search: string) => {
       setIsLoadingSymbols(true);
       try {
-        const syms = await getRepositorySymbols(repoId, {
-          symbolType: type,
-          search: search,
-        });
+        const syms = showcaseMode
+          ? await getShowcaseSymbols(repoId, { symbolType: type, search: search })
+          : await getRepositorySymbols(repoId, { symbolType: type, search: search });
         setSymbols(syms || []);
       } catch {
         setSymbols([]);
@@ -177,38 +244,48 @@ export default function DashboardPage() {
         setIsLoadingSymbols(false);
       }
     },
-    []
+    [showcaseMode]
   );
 
   // 5. Load CALLS relationships for the graph
-  const loadRelationships = useCallback(async (repoId: number) => {
-    setIsLoadingRelationships(true);
-    setRelationshipsError(null);
-    try {
-      const rels = await getRepositoryRelationships(repoId, "calls");
-      setCallRelationships(rels || []);
-    } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : "Failed to load function call graph data";
-      setRelationshipsError(msg);
-      setCallRelationships([]);
-    } finally {
-      setIsLoadingRelationships(false);
-    }
-  }, []);
+  const loadRelationships = useCallback(
+    async (repoId: number) => {
+      setIsLoadingRelationships(true);
+      setRelationshipsError(null);
+      try {
+        const rels = showcaseMode
+          ? await getShowcaseRelationships(repoId, "calls")
+          : await getRepositoryRelationships(repoId, "calls");
+        setCallRelationships(rels || []);
+      } catch (err: unknown) {
+        const msg = err instanceof Error ? err.message : "Failed to load function call graph data";
+        setRelationshipsError(msg);
+        setCallRelationships([]);
+      } finally {
+        setIsLoadingRelationships(false);
+      }
+    },
+    [showcaseMode]
+  );
 
   // 6. Load symbol detail
-  const loadDetail = useCallback(async (repoId: number, symbolId: number) => {
-    setIsLoadingDetail(true);
-    try {
-      const detail = await getSymbolDetail(repoId, symbolId);
-      setSymbolDetail(detail);
-    } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : "Failed to load symbol detail";
-      setErrorMessage(msg);
-    } finally {
-      setIsLoadingDetail(false);
-    }
-  }, []);
+  const loadDetail = useCallback(
+    async (repoId: number, symbolId: number) => {
+      setIsLoadingDetail(true);
+      try {
+        const detail = showcaseMode
+          ? await getShowcaseSymbolDetail(repoId, symbolId)
+          : await getSymbolDetail(repoId, symbolId);
+        setSymbolDetail(detail);
+      } catch (err: unknown) {
+        const msg = err instanceof Error ? err.message : "Failed to load symbol detail";
+        setErrorMessage(msg);
+      } finally {
+        setIsLoadingDetail(false);
+      }
+    },
+    [showcaseMode]
+  );
 
   const [prevSelectedRepoId, setPrevSelectedRepoId] = useState<number | null>(selectedRepoId);
 
@@ -230,6 +307,49 @@ export default function DashboardPage() {
   useEffect(() => {
     let ignore = false;
     async function init() {
+      if (showcaseMode) {
+        const val = validateShowcaseData();
+        if (!val.isValid) {
+          if (!ignore) {
+            setBackendHealthy(false);
+            setErrorMessage(val.error || "Showcase dataset is missing or corrupted");
+            setIsLoadingRepos(false);
+          }
+          return;
+        }
+
+        try {
+          const health = await checkShowcaseHealth();
+          if (!ignore) setBackendHealthy(health.status === "ok");
+
+          const repos = await getShowcaseRepositories();
+          const meta = getShowcaseMetadata();
+          const statusList: RepositoryStatus[] = repos.map((repo) => ({
+            repository: repo,
+            isIndexed: true,
+            symbolCount: meta.symbol_count,
+            fileCount: meta.file_count,
+          }));
+
+          if (!ignore) {
+            setReposStatus(statusList);
+            if (statusList.length > 0) {
+              setSelectedRepoId(statusList[0].repository.id);
+            }
+          }
+        } catch (err: unknown) {
+          if (!ignore) {
+            setBackendHealthy(false);
+            const msg = err instanceof Error ? err.message : "Failed to load showcase repository";
+            setErrorMessage(msg);
+          }
+        } finally {
+          if (!ignore) setIsLoadingRepos(false);
+        }
+        return;
+      }
+
+      // Live mode init
       try {
         await checkBackendHealth();
         if (!ignore) setBackendHealthy(true);
@@ -292,7 +412,7 @@ export default function DashboardPage() {
     return () => {
       ignore = true;
     };
-  }, []);
+  }, [showcaseMode]);
 
   // When active repository or query filters change, fetch repository data
   useEffect(() => {
@@ -301,24 +421,46 @@ export default function DashboardPage() {
 
     async function fetchRepoData() {
       try {
-        const [filesRes, symsRes, relsRes] = await Promise.all([
-          getRepositoryFiles(selectedRepoId!).catch(() => ({ total_files: 0, files: [] })),
-          getRepositorySymbols(selectedRepoId!, {
-            symbolType: selectedType,
-            search: searchQuery,
-          }).catch(() => []),
-          getRepositoryRelationships(selectedRepoId!, "calls").catch((err: unknown) => {
-            const msg = err instanceof Error ? err.message : "Failed to load function call graph data";
-            if (!ignore) setRelationshipsError(msg);
-            return [];
-          }),
-        ]);
+        if (showcaseMode) {
+          const [filesRes, symsRes, relsRes] = await Promise.all([
+            getShowcaseFiles(selectedRepoId!).catch(() => ({ total_files: 0, files: [] })),
+            getShowcaseSymbols(selectedRepoId!, {
+              symbolType: selectedType,
+              search: searchQuery,
+            }).catch(() => []),
+            getShowcaseRelationships(selectedRepoId!, "calls").catch((err: unknown) => {
+              const msg = err instanceof Error ? err.message : "Failed to load function call graph data";
+              if (!ignore) setRelationshipsError(msg);
+              return [];
+            }),
+          ]);
 
-        if (!ignore) {
-          setFiles(filesRes.files || []);
-          setSymbols(symsRes || []);
-          setCallRelationships(relsRes || []);
-          setRelationshipsError(null);
+          if (!ignore) {
+            setFiles(filesRes.files || []);
+            setSymbols(symsRes || []);
+            setCallRelationships(relsRes || []);
+            setRelationshipsError(null);
+          }
+        } else {
+          const [filesRes, symsRes, relsRes] = await Promise.all([
+            getRepositoryFiles(selectedRepoId!).catch(() => ({ total_files: 0, files: [] })),
+            getRepositorySymbols(selectedRepoId!, {
+              symbolType: selectedType,
+              search: searchQuery,
+            }).catch(() => []),
+            getRepositoryRelationships(selectedRepoId!, "calls").catch((err: unknown) => {
+              const msg = err instanceof Error ? err.message : "Failed to load function call graph data";
+              if (!ignore) setRelationshipsError(msg);
+              return [];
+            }),
+          ]);
+
+          if (!ignore) {
+            setFiles(filesRes.files || []);
+            setSymbols(symsRes || []);
+            setCallRelationships(relsRes || []);
+            setRelationshipsError(null);
+          }
         }
       } finally {
         if (!ignore) {
@@ -334,7 +476,7 @@ export default function DashboardPage() {
     return () => {
       ignore = true;
     };
-  }, [selectedRepoId, selectedType, searchQuery]);
+  }, [selectedRepoId, selectedType, searchQuery, showcaseMode]);
 
   // Debounce search/filter symbol reloads
   function handleSearchChange(q: string) {
@@ -390,6 +532,13 @@ export default function DashboardPage() {
 
   // Trigger AST Indexing
   async function handleAnalyze(repoId: number) {
+    if (showcaseMode) {
+      setErrorMessage(
+        "Live AST indexing is unavailable in static showcase mode. The TinyDB v4.8.2 repository is already pre-indexed from static AST analysis."
+      );
+      return;
+    }
+
     setReposStatus((prev) =>
       prev.map((r) =>
         r.repository.id === repoId ? { ...r, isAnalyzing: true } : r
@@ -420,6 +569,13 @@ export default function DashboardPage() {
 
   // Register new repository
   async function handleRegister(input: RepositoryCreateInput) {
+    if (showcaseMode) {
+      setErrorMessage(
+        "Registering new repositories is unavailable in static showcase mode. To index custom codebases, run CodeLens AI with a backend service."
+      );
+      return;
+    }
+
     const created = await createRepository(input);
     await loadRepositories(created.id);
     setLeftTab("repos");
@@ -455,6 +611,7 @@ export default function DashboardPage() {
         onOpenRegisterModal={() => setIsRegisterModalOpen(true)}
         onRefresh={handleRefreshAll}
         isRefreshing={isRefreshing}
+        isShowcaseMode={showcaseMode}
       />
 
       {/* Error Banner */}
@@ -516,14 +673,41 @@ export default function DashboardPage() {
           )}
 
           {/* Tab Content */}
-          <div className="flex-1 overflow-hidden">
+          <div className="flex-1 overflow-hidden flex flex-col">
             {leftTab === "explorer" ? (
-              <FileExplorer
-                files={files}
-                selectedFile={selectedFileFilter}
-                onSelectFile={(f) => setSelectedFileFilter(f)}
-                isLoading={isLoadingFiles}
-              />
+              <div className="flex-1 overflow-hidden flex flex-col">
+                <div className="flex-1 overflow-hidden">
+                  <FileExplorer
+                    files={files}
+                    selectedFile={selectedFileFilter}
+                    onSelectFile={(f) => setSelectedFileFilter(f)}
+                    isLoading={isLoadingFiles}
+                  />
+                </div>
+
+                {/* TinyDB MIT Attribution & Upstream Link in Showcase Mode */}
+                {showcaseMode && (
+                  <div className="border-t border-slate-800 bg-[#0b0f19] p-3 text-[11px] text-slate-400 space-y-1.5 shrink-0">
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-slate-200">TinyDB v4.8.2</span>
+                      <span className="rounded border border-emerald-500/40 bg-emerald-950/40 px-1.5 py-0.2 text-[9px] text-emerald-300 font-mono">
+                        MIT License
+                      </span>
+                    </div>
+                    <p className="text-[10px] text-slate-500 leading-tight">
+                      Precomputed static AST snapshot (commit <code>6d7c4fc</code>). Original work © Markus Siemens.
+                    </p>
+                    <a
+                      href="https://github.com/msiemens/tinydb"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[10px] text-sky-400 hover:underline"
+                    >
+                      Upstream: github.com/msiemens/tinydb ↗
+                    </a>
+                  </div>
+                )}
+              </div>
             ) : (
               <div className="h-full overflow-y-auto p-3">
                 <RepositoryList
@@ -536,6 +720,7 @@ export default function DashboardPage() {
                   onAnalyzeRepo={handleAnalyze}
                   isLoading={isLoadingRepos}
                   onOpenRegisterModal={() => setIsRegisterModalOpen(true)}
+                  isShowcaseMode={showcaseMode}
                 />
               </div>
             )}
@@ -685,6 +870,7 @@ export default function DashboardPage() {
                 onSelectTraceNode={handleSelectTraceNode}
                 onClearTrace={() => setActiveTrace(null)}
                 isTraceActive={activeTrace !== null}
+                isShowcaseMode={showcaseMode}
               />
             )}
           </div>
@@ -696,6 +882,7 @@ export default function DashboardPage() {
         isOpen={isRegisterModalOpen}
         onClose={() => setIsRegisterModalOpen(false)}
         onSubmit={handleRegister}
+        isShowcaseMode={showcaseMode}
       />
     </div>
   );

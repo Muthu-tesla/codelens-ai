@@ -1,0 +1,4296 @@
+[
+  {
+    "id": 3,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 15,
+    "source_symbol": {
+      "id": 6,
+      "name": "db",
+      "qualified_name": "tests.conftest.db",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 5,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 27,
+    "source_symbol": {
+      "id": 7,
+      "name": "storage",
+      "qualified_name": "tests.conftest.storage",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 195,
+      "name": "CachingMiddleware",
+      "qualified_name": "tinydb.middlewares.CachingMiddleware",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 11,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 24,
+    "source_symbol": {
+      "id": 10,
+      "name": "test_caching_read",
+      "qualified_name": "tests.test_middlewares.test_caching_read",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 12,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 24,
+    "source_symbol": {
+      "id": 10,
+      "name": "test_caching_read",
+      "qualified_name": "tests.test_middlewares.test_caching_read",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 195,
+      "name": "CachingMiddleware",
+      "qualified_name": "tinydb.middlewares.CachingMiddleware",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 18,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 80,
+    "source_symbol": {
+      "id": 15,
+      "name": "test_nested",
+      "qualified_name": "tests.test_middlewares.test_nested",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 195,
+      "name": "CachingMiddleware",
+      "qualified_name": "tinydb.middlewares.CachingMiddleware",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 19,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 81,
+    "source_symbol": {
+      "id": 15,
+      "name": "test_nested",
+      "qualified_name": "tests.test_middlewares.test_nested",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 7,
+      "name": "storage",
+      "qualified_name": "tests.conftest.storage",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 21,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 93,
+    "source_symbol": {
+      "id": 16,
+      "name": "test_caching_json_write",
+      "qualified_name": "tests.test_middlewares.test_caching_json_write",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 22,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 93,
+    "source_symbol": {
+      "id": 16,
+      "name": "test_caching_json_write",
+      "qualified_name": "tests.test_middlewares.test_caching_json_write",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 195,
+      "name": "CachingMiddleware",
+      "qualified_name": "tinydb.middlewares.CachingMiddleware",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 24,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 112,
+    "source_symbol": {
+      "id": 17,
+      "name": "test_caching_rejects_use_after_close",
+      "qualified_name": "tests.test_middlewares.test_caching_rejects_use_after_close",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 25,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 112,
+    "source_symbol": {
+      "id": 17,
+      "name": "test_caching_rejects_use_after_close",
+      "qualified_name": "tests.test_middlewares.test_caching_rejects_use_after_close",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 195,
+      "name": "CachingMiddleware",
+      "qualified_name": "tinydb.middlewares.CachingMiddleware",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 31,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 6,
+    "source_symbol": {
+      "id": 19,
+      "name": "test_delete",
+      "qualified_name": "tests.test_operations.test_delete",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 207,
+      "name": "delete",
+      "qualified_name": "tinydb.operations.delete",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 32,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 6,
+    "source_symbol": {
+      "id": 19,
+      "name": "test_delete",
+      "qualified_name": "tests.test_operations.test_delete",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 34,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 11,
+    "source_symbol": {
+      "id": 20,
+      "name": "test_add_int",
+      "qualified_name": "tests.test_operations.test_add_int",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 208,
+      "name": "add",
+      "qualified_name": "tinydb.operations.add",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 35,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 11,
+    "source_symbol": {
+      "id": 20,
+      "name": "test_add_int",
+      "qualified_name": "tests.test_operations.test_add_int",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 37,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 16,
+    "source_symbol": {
+      "id": 21,
+      "name": "test_add_str",
+      "qualified_name": "tests.test_operations.test_add_str",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 208,
+      "name": "add",
+      "qualified_name": "tinydb.operations.add",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 38,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 16,
+    "source_symbol": {
+      "id": 21,
+      "name": "test_add_str",
+      "qualified_name": "tests.test_operations.test_add_str",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 40,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 21,
+    "source_symbol": {
+      "id": 22,
+      "name": "test_subtract",
+      "qualified_name": "tests.test_operations.test_subtract",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 209,
+      "name": "subtract",
+      "qualified_name": "tinydb.operations.subtract",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 41,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 21,
+    "source_symbol": {
+      "id": 22,
+      "name": "test_subtract",
+      "qualified_name": "tests.test_operations.test_subtract",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 43,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 26,
+    "source_symbol": {
+      "id": 23,
+      "name": "test_set",
+      "qualified_name": "tests.test_operations.test_set",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 210,
+      "name": "set",
+      "qualified_name": "tinydb.operations.set",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 44,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 26,
+    "source_symbol": {
+      "id": 23,
+      "name": "test_set",
+      "qualified_name": "tests.test_operations.test_set",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 46,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 31,
+    "source_symbol": {
+      "id": 24,
+      "name": "test_increment",
+      "qualified_name": "tests.test_operations.test_increment",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 211,
+      "name": "increment",
+      "qualified_name": "tinydb.operations.increment",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 47,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 31,
+    "source_symbol": {
+      "id": 24,
+      "name": "test_increment",
+      "qualified_name": "tests.test_operations.test_increment",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 49,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 36,
+    "source_symbol": {
+      "id": 25,
+      "name": "test_decrement",
+      "qualified_name": "tests.test_operations.test_decrement",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 212,
+      "name": "decrement",
+      "qualified_name": "tinydb.operations.decrement",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 50,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 36,
+    "source_symbol": {
+      "id": 25,
+      "name": "test_decrement",
+      "qualified_name": "tests.test_operations.test_decrement",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 59,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 10,
+    "source_symbol": {
+      "id": 27,
+      "name": "test_no_path",
+      "qualified_name": "tests.test_queries.test_no_path",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 61,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 14,
+    "source_symbol": {
+      "id": 28,
+      "name": "test_path_exists",
+      "qualified_name": "tests.test_queries.test_path_exists",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 62,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 15,
+    "source_symbol": {
+      "id": 28,
+      "name": "test_path_exists",
+      "qualified_name": "tests.test_queries.test_path_exists",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 64,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 32,
+    "source_symbol": {
+      "id": 29,
+      "name": "test_path_and",
+      "qualified_name": "tests.test_queries.test_path_and",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 65,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 37,
+    "source_symbol": {
+      "id": 29,
+      "name": "test_path_and",
+      "qualified_name": "tests.test_queries.test_path_and",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 67,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 42,
+    "source_symbol": {
+      "id": 30,
+      "name": "test_callable_in_path_with_map",
+      "qualified_name": "tests.test_queries.test_callable_in_path_with_map",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 69,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 49,
+    "source_symbol": {
+      "id": 31,
+      "name": "test_callable_in_path_with_chain",
+      "qualified_name": "tests.test_queries.test_callable_in_path_with_chain",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 71,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 54,
+    "source_symbol": {
+      "id": 32,
+      "name": "test_eq",
+      "qualified_name": "tests.test_queries.test_eq",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 73,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 66,
+    "source_symbol": {
+      "id": 33,
+      "name": "test_ne",
+      "qualified_name": "tests.test_queries.test_ne",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 75,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 79,
+    "source_symbol": {
+      "id": 34,
+      "name": "test_lt",
+      "qualified_name": "tests.test_queries.test_lt",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 77,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 87,
+    "source_symbol": {
+      "id": 35,
+      "name": "test_le",
+      "qualified_name": "tests.test_queries.test_le",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 79,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 95,
+    "source_symbol": {
+      "id": 36,
+      "name": "test_gt",
+      "qualified_name": "tests.test_queries.test_gt",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 81,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 102,
+    "source_symbol": {
+      "id": 37,
+      "name": "test_ge",
+      "qualified_name": "tests.test_queries.test_ge",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 83,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 111,
+    "source_symbol": {
+      "id": 38,
+      "name": "test_or",
+      "qualified_name": "tests.test_queries.test_or",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 85,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 123,
+    "source_symbol": {
+      "id": 39,
+      "name": "test_and",
+      "qualified_name": "tests.test_queries.test_and",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 87,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 134,
+    "source_symbol": {
+      "id": 40,
+      "name": "test_not",
+      "qualified_name": "tests.test_queries.test_not",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 89,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 152,
+    "source_symbol": {
+      "id": 41,
+      "name": "test_has_key",
+      "qualified_name": "tests.test_queries.test_has_key",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 91,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 160,
+    "source_symbol": {
+      "id": 42,
+      "name": "test_regex",
+      "qualified_name": "tests.test_queries.test_regex",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 93,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 196,
+    "source_symbol": {
+      "id": 43,
+      "name": "test_regex_flags_affect_hash_and_query_cache",
+      "qualified_name": "tests.test_queries.test_regex_flags_affect_hash_and_query_cache",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 94,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 203,
+    "source_symbol": {
+      "id": 43,
+      "name": "test_regex_flags_affect_hash_and_query_cache",
+      "qualified_name": "tests.test_queries.test_regex_flags_affect_hash_and_query_cache",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 96,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 218,
+    "source_symbol": {
+      "id": 44,
+      "name": "test_custom",
+      "qualified_name": "tests.test_queries.test_custom",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 98,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 242,
+    "source_symbol": {
+      "id": 45,
+      "name": "test_custom_with_params",
+      "qualified_name": "tests.test_queries.test_custom_with_params",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 100,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 258,
+    "source_symbol": {
+      "id": 46,
+      "name": "test_custom_with_unhashable_params",
+      "qualified_name": "tests.test_queries.test_custom_with_unhashable_params",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 102,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 301,
+    "source_symbol": {
+      "id": 47,
+      "name": "test_any",
+      "qualified_name": "tests.test_queries.test_any",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 104,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 331,
+    "source_symbol": {
+      "id": 48,
+      "name": "test_all",
+      "qualified_name": "tests.test_queries.test_all",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 106,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 361,
+    "source_symbol": {
+      "id": 49,
+      "name": "test_has",
+      "qualified_name": "tests.test_queries.test_has",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 108,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 429,
+    "source_symbol": {
+      "id": 50,
+      "name": "test_one_of",
+      "qualified_name": "tests.test_queries.test_one_of",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 110,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 437,
+    "source_symbol": {
+      "id": 51,
+      "name": "test_hash",
+      "qualified_name": "tests.test_queries.test_hash",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 112,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 457,
+    "source_symbol": {
+      "id": 52,
+      "name": "test_orm_usage",
+      "qualified_name": "tests.test_queries.test_orm_usage",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 114,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 465,
+    "source_symbol": {
+      "id": 53,
+      "name": "test_repr",
+      "qualified_name": "tests.test_queries.test_repr",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 117,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 489,
+    "source_symbol": {
+      "id": 55,
+      "name": "test_noop",
+      "qualified_name": "tests.test_queries.test_noop",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 119,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 497,
+    "source_symbol": {
+      "id": 56,
+      "name": "test_equality",
+      "qualified_name": "tests.test_queries.test_equality",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 121,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 504,
+    "source_symbol": {
+      "id": 57,
+      "name": "test_empty_query_error",
+      "qualified_name": "tests.test_queries.test_empty_query_error",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 123,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 508,
+    "source_symbol": {
+      "id": 58,
+      "name": "test_fragment",
+      "qualified_name": "tests.test_queries.test_fragment",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 125,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 518,
+    "source_symbol": {
+      "id": 59,
+      "name": "test_fragment_with_path",
+      "qualified_name": "tests.test_queries.test_fragment_with_path",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 127,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 526,
+    "source_symbol": {
+      "id": 60,
+      "name": "test_get_item",
+      "qualified_name": "tests.test_queries.test_get_item",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 133,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 23,
+    "source_symbol": {
+      "id": 62,
+      "name": "test_json",
+      "qualified_name": "tests.test_storages.test_json",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 257,
+      "name": "JSONStorage",
+      "qualified_name": "tinydb.storages.JSONStorage",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 135,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 33,
+    "source_symbol": {
+      "id": 63,
+      "name": "test_json_kwargs",
+      "qualified_name": "tests.test_storages.test_json_kwargs",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 137,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 59,
+    "source_symbol": {
+      "id": 64,
+      "name": "test_json_readwrite",
+      "qualified_name": "tests.test_storages.test_json_readwrite",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 138,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 65,
+    "source_symbol": {
+      "id": 64,
+      "name": "test_json_readwrite",
+      "qualified_name": "tests.test_storages.test_json_readwrite",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 140,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 86,
+    "source_symbol": {
+      "id": 65,
+      "name": "test_json_read",
+      "qualified_name": "tests.test_storages.test_json_read",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 141,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 94,
+    "source_symbol": {
+      "id": 65,
+      "name": "test_json_read",
+      "qualified_name": "tests.test_storages.test_json_read",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 143,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 111,
+    "source_symbol": {
+      "id": 66,
+      "name": "test_create_dirs",
+      "qualified_name": "tests.test_storages.test_create_dirs",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 257,
+      "name": "JSONStorage",
+      "qualified_name": "tinydb.storages.JSONStorage",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 145,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 126,
+    "source_symbol": {
+      "id": 67,
+      "name": "test_json_invalid_directory",
+      "qualified_name": "tests.test_storages.test_json_invalid_directory",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 147,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 132,
+    "source_symbol": {
+      "id": 68,
+      "name": "test_in_memory",
+      "qualified_name": "tests.test_storages.test_in_memory",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 262,
+      "name": "MemoryStorage",
+      "qualified_name": "tinydb.storages.MemoryStorage",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 149,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 145,
+    "source_symbol": {
+      "id": 69,
+      "name": "test_in_memory_close",
+      "qualified_name": "tests.test_storages.test_in_memory_close",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 152,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 175,
+    "source_symbol": {
+      "id": 71,
+      "name": "test_read_once",
+      "qualified_name": "tests.test_storages.test_read_once",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 154,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 210,
+    "source_symbol": {
+      "id": 72,
+      "name": "test_custom_with_exception",
+      "qualified_name": "tests.test_storages.test_custom_with_exception",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 156,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 250,
+    "source_symbol": {
+      "id": 73,
+      "name": "test_yaml",
+      "qualified_name": "tests.test_storages.test_yaml",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 157,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 258,
+    "source_symbol": {
+      "id": 73,
+      "name": "test_yaml",
+      "qualified_name": "tests.test_storages.test_yaml",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 159,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 267,
+    "source_symbol": {
+      "id": 74,
+      "name": "test_encoding",
+      "qualified_name": "tests.test_storages.test_encoding",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 257,
+      "name": "JSONStorage",
+      "qualified_name": "tinydb.storages.JSONStorage",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 161,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 287,
+    "source_symbol": {
+      "id": 75,
+      "name": "test_json_invalid_mode_warning",
+      "qualified_name": "tests.test_storages.test_json_invalid_mode_warning",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 257,
+      "name": "JSONStorage",
+      "qualified_name": "tinydb.storages.JSONStorage",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 171,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 28,
+    "source_symbol": {
+      "id": 79,
+      "name": "test_one_table",
+      "qualified_name": "tests.test_tables.test_one_table",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 173,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 41,
+    "source_symbol": {
+      "id": 80,
+      "name": "test_multiple_tables",
+      "qualified_name": "tests.test_tables.test_multiple_tables",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 176,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 60,
+    "source_symbol": {
+      "id": 82,
+      "name": "test_query_cache",
+      "qualified_name": "tests.test_tables.test_query_cache",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 178,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 84,
+    "source_symbol": {
+      "id": 83,
+      "name": "test_query_cache_with_mutable_callable",
+      "qualified_name": "tests.test_tables.test_query_cache_with_mutable_callable",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 180,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 100,
+    "source_symbol": {
+      "id": 84,
+      "name": "test_zero_cache_size",
+      "qualified_name": "tests.test_tables.test_zero_cache_size",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 182,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 112,
+    "source_symbol": {
+      "id": 85,
+      "name": "test_query_cache_size",
+      "qualified_name": "tests.test_tables.test_query_cache_size",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 184,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 125,
+    "source_symbol": {
+      "id": 86,
+      "name": "test_lru_cache",
+      "qualified_name": "tests.test_tables.test_lru_cache",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 191,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 190,
+    "source_symbol": {
+      "id": 92,
+      "name": "test_persist_empty_does_not_wipe_existing_data",
+      "qualified_name": "tests.test_tables.test_persist_empty_does_not_wipe_existing_data",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 196,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 34,
+    "source_symbol": {
+      "id": 96,
+      "name": "test_insert",
+      "qualified_name": "tests.test_tinydb.test_insert",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 199,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 55,
+    "source_symbol": {
+      "id": 98,
+      "name": "test_insert_with_doc_id",
+      "qualified_name": "tests.test_tinydb.test_insert_with_doc_id",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 268,
+      "name": "Document",
+      "qualified_name": "tinydb.table.Document",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 201,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 65,
+    "source_symbol": {
+      "id": 99,
+      "name": "test_insert_with_duplicate_doc_id",
+      "qualified_name": "tests.test_tinydb.test_insert_with_duplicate_doc_id",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 268,
+      "name": "Document",
+      "qualified_name": "tinydb.table.Document",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 203,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 70,
+    "source_symbol": {
+      "id": 100,
+      "name": "test_insert_multiple",
+      "qualified_name": "tests.test_tinydb.test_insert_multiple",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 206,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 115,
+    "source_symbol": {
+      "id": 102,
+      "name": "test_insert_multiple_with_doc_ids",
+      "qualified_name": "tests.test_tinydb.test_insert_multiple_with_doc_ids",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 268,
+      "name": "Document",
+      "qualified_name": "tinydb.table.Document",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 208,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 129,
+    "source_symbol": {
+      "id": 103,
+      "name": "test_insert_multiple_mixed_document_and_dict",
+      "qualified_name": "tests.test_tinydb.test_insert_multiple_mixed_document_and_dict",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 268,
+      "name": "Document",
+      "qualified_name": "tinydb.table.Document",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 211,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 159,
+    "source_symbol": {
+      "id": 105,
+      "name": "test_insert_valid_mapping_type",
+      "qualified_name": "tests.test_tinydb.test_insert_valid_mapping_type",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 213,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 177,
+    "source_symbol": {
+      "id": 106,
+      "name": "test_custom_mapping_type_with_json",
+      "qualified_name": "tests.test_tinydb.test_custom_mapping_type_with_json",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 214,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 180,
+    "source_symbol": {
+      "id": 106,
+      "name": "test_custom_mapping_type_with_json",
+      "qualified_name": "tests.test_tinydb.test_custom_mapping_type_with_json",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 216,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 199,
+    "source_symbol": {
+      "id": 107,
+      "name": "test_remove",
+      "qualified_name": "tests.test_tinydb.test_remove",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 219,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 211,
+    "source_symbol": {
+      "id": 109,
+      "name": "test_remove_multiple",
+      "qualified_name": "tests.test_tinydb.test_remove_multiple",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 222,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 223,
+    "source_symbol": {
+      "id": 111,
+      "name": "test_remove_returns_ids",
+      "qualified_name": "tests.test_tinydb.test_remove_returns_ids",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 226,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 248,
+    "source_symbol": {
+      "id": 114,
+      "name": "test_update",
+      "qualified_name": "tests.test_tinydb.test_update",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 228,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 255,
+    "source_symbol": {
+      "id": 115,
+      "name": "test_update_all",
+      "qualified_name": "tests.test_tinydb.test_update_all",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 230,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 267,
+    "source_symbol": {
+      "id": 116,
+      "name": "test_update_returns_ids",
+      "qualified_name": "tests.test_tinydb.test_update_returns_ids",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 232,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 283,
+    "source_symbol": {
+      "id": 117,
+      "name": "test_update_transform",
+      "qualified_name": "tests.test_tinydb.test_update_transform",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 233,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 285,
+    "source_symbol": {
+      "id": 117,
+      "name": "test_update_transform",
+      "qualified_name": "tests.test_tinydb.test_update_transform",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 211,
+      "name": "increment",
+      "qualified_name": "tinydb.operations.increment",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 234,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 286,
+    "source_symbol": {
+      "id": 117,
+      "name": "test_update_transform",
+      "qualified_name": "tests.test_tinydb.test_update_transform",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 207,
+      "name": "delete",
+      "qualified_name": "tinydb.operations.delete",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 236,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 303,
+    "source_symbol": {
+      "id": 118,
+      "name": "test_update_custom_transform_callable",
+      "qualified_name": "tests.test_tinydb.test_update_custom_transform_callable",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 239,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 336,
+    "source_symbol": {
+      "id": 120,
+      "name": "test_update_ids",
+      "qualified_name": "tests.test_tinydb.test_update_ids",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 241,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 344,
+    "source_symbol": {
+      "id": 121,
+      "name": "test_update_ids_missing",
+      "qualified_name": "tests.test_tinydb.test_update_ids_missing",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 243,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 354,
+    "source_symbol": {
+      "id": 122,
+      "name": "test_update_ids_mixed",
+      "qualified_name": "tests.test_tinydb.test_update_ids_mixed",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 246,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 371,
+    "source_symbol": {
+      "id": 124,
+      "name": "test_update_multiple",
+      "qualified_name": "tests.test_tinydb.test_update_multiple",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 248,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 387,
+    "source_symbol": {
+      "id": 125,
+      "name": "test_update_multiple_operation",
+      "qualified_name": "tests.test_tinydb.test_update_multiple_operation",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 249,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 390,
+    "source_symbol": {
+      "id": 125,
+      "name": "test_update_multiple_operation",
+      "qualified_name": "tests.test_tinydb.test_update_multiple_operation",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 211,
+      "name": "increment",
+      "qualified_name": "tinydb.operations.increment",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 251,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 401,
+    "source_symbol": {
+      "id": 126,
+      "name": "test_upsert",
+      "qualified_name": "tests.test_tinydb.test_upsert",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 253,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 413,
+    "source_symbol": {
+      "id": 127,
+      "name": "test_upsert_by_id",
+      "qualified_name": "tests.test_tinydb.test_upsert_by_id",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 268,
+      "name": "Document",
+      "qualified_name": "tinydb.table.Document",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 254,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 415,
+    "source_symbol": {
+      "id": 127,
+      "name": "test_upsert_by_id",
+      "qualified_name": "tests.test_tinydb.test_upsert_by_id",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 256,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 440,
+    "source_symbol": {
+      "id": 128,
+      "name": "test_search",
+      "qualified_name": "tests.test_tinydb.test_search",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 258,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 448,
+    "source_symbol": {
+      "id": 129,
+      "name": "test_search_path",
+      "qualified_name": "tests.test_tinydb.test_search_path",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 260,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 456,
+    "source_symbol": {
+      "id": 130,
+      "name": "test_search_no_results_cache",
+      "qualified_name": "tests.test_tinydb.test_search_no_results_cache",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 262,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 461,
+    "source_symbol": {
+      "id": 131,
+      "name": "test_get",
+      "qualified_name": "tests.test_tinydb.test_get",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 267,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 484,
+    "source_symbol": {
+      "id": 135,
+      "name": "test_count",
+      "qualified_name": "tests.test_tinydb.test_count",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 269,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 489,
+    "source_symbol": {
+      "id": 136,
+      "name": "test_contains",
+      "qualified_name": "tests.test_tinydb.test_contains",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 273,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 505,
+    "source_symbol": {
+      "id": 139,
+      "name": "test_get_idempotent",
+      "qualified_name": "tests.test_tinydb.test_get_idempotent",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 275,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 514,
+    "source_symbol": {
+      "id": 140,
+      "name": "test_multiple_dbs",
+      "qualified_name": "tests.test_tinydb.test_multiple_dbs",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 277,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 542,
+    "source_symbol": {
+      "id": 141,
+      "name": "test_storage_closed_once",
+      "qualified_name": "tests.test_tinydb.test_storage_closed_once",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 279,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 557,
+    "source_symbol": {
+      "id": 142,
+      "name": "test_unique_ids",
+      "qualified_name": "tests.test_tinydb.test_unique_ids",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 280,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 572,
+    "source_symbol": {
+      "id": 142,
+      "name": "test_unique_ids",
+      "qualified_name": "tests.test_tinydb.test_unique_ids",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 281,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 577,
+    "source_symbol": {
+      "id": 142,
+      "name": "test_unique_ids",
+      "qualified_name": "tests.test_tinydb.test_unique_ids",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 210,
+      "name": "set",
+      "qualified_name": "tinydb.operations.set",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 283,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 590,
+    "source_symbol": {
+      "id": 143,
+      "name": "test_lastid_after_open",
+      "qualified_name": "tests.test_tinydb.test_lastid_after_open",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 285,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 604,
+    "source_symbol": {
+      "id": 144,
+      "name": "test_doc_ids_json",
+      "qualified_name": "tests.test_tinydb.test_doc_ids_json",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 286,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 619,
+    "source_symbol": {
+      "id": 144,
+      "name": "test_doc_ids_json",
+      "qualified_name": "tests.test_tinydb.test_doc_ids_json",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 288,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 632,
+    "source_symbol": {
+      "id": 145,
+      "name": "test_insert_string",
+      "qualified_name": "tests.test_tinydb.test_insert_string",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 290,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 650,
+    "source_symbol": {
+      "id": 146,
+      "name": "test_insert_invalid_dict",
+      "qualified_name": "tests.test_tinydb.test_insert_invalid_dict",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 292,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 665,
+    "source_symbol": {
+      "id": 147,
+      "name": "test_gc",
+      "qualified_name": "tests.test_tinydb.test_gc",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 293,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 669,
+    "source_symbol": {
+      "id": 147,
+      "name": "test_gc",
+      "qualified_name": "tests.test_tinydb.test_gc",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 295,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 675,
+    "source_symbol": {
+      "id": 148,
+      "name": "test_drop_table",
+      "qualified_name": "tests.test_tinydb.test_drop_table",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 296,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 693,
+    "source_symbol": {
+      "id": 148,
+      "name": "test_drop_table",
+      "qualified_name": "tests.test_tinydb.test_drop_table",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 210,
+      "name": "set",
+      "qualified_name": "tinydb.operations.set",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 298,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 707,
+    "source_symbol": {
+      "id": 149,
+      "name": "test_empty_write",
+      "qualified_name": "tests.test_tinydb.test_empty_write",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 300,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 712,
+    "source_symbol": {
+      "id": 150,
+      "name": "test_query_cache",
+      "qualified_name": "tests.test_tinydb.test_query_cache",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 301,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 718,
+    "source_symbol": {
+      "id": 150,
+      "name": "test_query_cache",
+      "qualified_name": "tests.test_tinydb.test_query_cache",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 303,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 736,
+    "source_symbol": {
+      "id": 151,
+      "name": "test_query_cache_documents_are_shared_with_cache",
+      "qualified_name": "tests.test_tinydb.test_query_cache_documents_are_shared_with_cache",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 304,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 739,
+    "source_symbol": {
+      "id": 151,
+      "name": "test_query_cache_documents_are_shared_with_cache",
+      "qualified_name": "tests.test_tinydb.test_query_cache_documents_are_shared_with_cache",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 307,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 763,
+    "source_symbol": {
+      "id": 153,
+      "name": "test_repr",
+      "qualified_name": "tests.test_tinydb.test_repr",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 309,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 778,
+    "source_symbol": {
+      "id": 154,
+      "name": "test_delete",
+      "qualified_name": "tests.test_tinydb.test_delete",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 310,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 779,
+    "source_symbol": {
+      "id": 154,
+      "name": "test_delete",
+      "qualified_name": "tests.test_tinydb.test_delete",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 313,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 798,
+    "source_symbol": {
+      "id": 156,
+      "name": "test_access_storage",
+      "qualified_name": "tests.test_tinydb.test_access_storage",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 314,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 800,
+    "source_symbol": {
+      "id": 156,
+      "name": "test_access_storage",
+      "qualified_name": "tests.test_tinydb.test_access_storage",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 195,
+      "name": "CachingMiddleware",
+      "qualified_name": "tinydb.middlewares.CachingMiddleware",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 316,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 805,
+    "source_symbol": {
+      "id": 157,
+      "name": "test_empty_db_len",
+      "qualified_name": "tests.test_tinydb.test_empty_db_len",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 318,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 812,
+    "source_symbol": {
+      "id": 158,
+      "name": "test_insert_on_existing_db",
+      "qualified_name": "tests.test_tinydb.test_insert_on_existing_db",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 320,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 827,
+    "source_symbol": {
+      "id": 159,
+      "name": "test_storage_access",
+      "qualified_name": "tests.test_tinydb.test_storage_access",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 322,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 833,
+    "source_symbol": {
+      "id": 160,
+      "name": "test_lambda_query",
+      "qualified_name": "tests.test_tinydb.test_lambda_query",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 176,
+      "name": "TinyDB",
+      "qualified_name": "tinydb.database.TinyDB",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 331,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 7,
+    "source_symbol": {
+      "id": 162,
+      "name": "test_lru_cache",
+      "qualified_name": "tests.test_utils.test_lru_cache",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 294,
+      "name": "LRUCache",
+      "qualified_name": "tinydb.utils.LRUCache",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 333,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 23,
+    "source_symbol": {
+      "id": 163,
+      "name": "test_lru_cache_set_multiple",
+      "qualified_name": "tests.test_utils.test_lru_cache_set_multiple",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 294,
+      "name": "LRUCache",
+      "qualified_name": "tinydb.utils.LRUCache",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 335,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 33,
+    "source_symbol": {
+      "id": 164,
+      "name": "test_lru_cache_set_update",
+      "qualified_name": "tests.test_utils.test_lru_cache_set_update",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 294,
+      "name": "LRUCache",
+      "qualified_name": "tinydb.utils.LRUCache",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 337,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 41,
+    "source_symbol": {
+      "id": 165,
+      "name": "test_lru_cache_get",
+      "qualified_name": "tests.test_utils.test_lru_cache_get",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 294,
+      "name": "LRUCache",
+      "qualified_name": "tinydb.utils.LRUCache",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 339,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 52,
+    "source_symbol": {
+      "id": 166,
+      "name": "test_lru_cache_none_value",
+      "qualified_name": "tests.test_utils.test_lru_cache_none_value",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 294,
+      "name": "LRUCache",
+      "qualified_name": "tinydb.utils.LRUCache",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 341,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 71,
+    "source_symbol": {
+      "id": 167,
+      "name": "test_lru_cache_delete",
+      "qualified_name": "tests.test_utils.test_lru_cache_delete",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 294,
+      "name": "LRUCache",
+      "qualified_name": "tinydb.utils.LRUCache",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 343,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 85,
+    "source_symbol": {
+      "id": 168,
+      "name": "test_lru_cache_clear",
+      "qualified_name": "tests.test_utils.test_lru_cache_clear",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 294,
+      "name": "LRUCache",
+      "qualified_name": "tinydb.utils.LRUCache",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 345,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 94,
+    "source_symbol": {
+      "id": 169,
+      "name": "test_lru_cache_unlimited",
+      "qualified_name": "tests.test_utils.test_lru_cache_unlimited",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 294,
+      "name": "LRUCache",
+      "qualified_name": "tinydb.utils.LRUCache",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 347,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 102,
+    "source_symbol": {
+      "id": 170,
+      "name": "test_lru_cache_unlimited_explicit",
+      "qualified_name": "tests.test_utils.test_lru_cache_unlimited_explicit",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 294,
+      "name": "LRUCache",
+      "qualified_name": "tinydb.utils.LRUCache",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 349,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 110,
+    "source_symbol": {
+      "id": 171,
+      "name": "test_lru_cache_iteration_works",
+      "qualified_name": "tests.test_utils.test_lru_cache_iteration_works",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 294,
+      "name": "LRUCache",
+      "qualified_name": "tinydb.utils.LRUCache",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 351,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 125,
+    "source_symbol": {
+      "id": 172,
+      "name": "test_lru_cache_falsy_values_bug",
+      "qualified_name": "tests.test_utils.test_lru_cache_falsy_values_bug",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 294,
+      "name": "LRUCache",
+      "qualified_name": "tinydb.utils.LRUCache",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 353,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 145,
+    "source_symbol": {
+      "id": 173,
+      "name": "test_freeze",
+      "qualified_name": "tests.test_utils.test_freeze",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 313,
+      "name": "freeze",
+      "qualified_name": "tinydb.utils.freeze",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 359,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 95,
+    "source_symbol": {
+      "id": 177,
+      "name": "__init__",
+      "qualified_name": "tinydb.database.TinyDB.__init__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 7,
+      "name": "storage",
+      "qualified_name": "tests.conftest.storage",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 361,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 103,
+    "source_symbol": {
+      "id": 178,
+      "name": "__repr__",
+      "qualified_name": "tinydb.database.TinyDB.__repr__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 180,
+      "name": "tables",
+      "qualified_name": "tinydb.database.TinyDB.tables",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 362,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 105,
+    "source_symbol": {
+      "id": 178,
+      "name": "__repr__",
+      "qualified_name": "tinydb.database.TinyDB.__repr__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 188,
+      "name": "__len__",
+      "qualified_name": "tinydb.database.TinyDB.__len__",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 363,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 106,
+    "source_symbol": {
+      "id": 178,
+      "name": "__repr__",
+      "qualified_name": "tinydb.database.TinyDB.__repr__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 179,
+      "name": "table",
+      "qualified_name": "tinydb.database.TinyDB.table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 366,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 161,
+    "source_symbol": {
+      "id": 180,
+      "name": "tables",
+      "qualified_name": "tinydb.database.TinyDB.tables",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 210,
+      "name": "set",
+      "qualified_name": "tinydb.operations.set",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 373,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 249,
+    "source_symbol": {
+      "id": 186,
+      "name": "__exit__",
+      "qualified_name": "tinydb.database.TinyDB.__exit__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 184,
+      "name": "close",
+      "qualified_name": "tinydb.database.TinyDB.close",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 375,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 255,
+    "source_symbol": {
+      "id": 187,
+      "name": "__getattr__",
+      "qualified_name": "tinydb.database.TinyDB.__getattr__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 179,
+      "name": "table",
+      "qualified_name": "tinydb.database.TinyDB.table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 377,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 268,
+    "source_symbol": {
+      "id": 188,
+      "name": "__len__",
+      "qualified_name": "tinydb.database.TinyDB.__len__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 179,
+      "name": "table",
+      "qualified_name": "tinydb.database.TinyDB.table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 379,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 274,
+    "source_symbol": {
+      "id": 189,
+      "name": "__iter__",
+      "qualified_name": "tinydb.database.TinyDB.__iter__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 179,
+      "name": "table",
+      "qualified_name": "tinydb.database.TinyDB.table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 388,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 118,
+    "source_symbol": {
+      "id": 198,
+      "name": "write",
+      "qualified_name": "tinydb.middlewares.CachingMiddleware.write",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 199,
+      "name": "flush",
+      "qualified_name": "tinydb.middlewares.CachingMiddleware.flush",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 391,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 137,
+    "source_symbol": {
+      "id": 200,
+      "name": "close",
+      "qualified_name": "tinydb.middlewares.CachingMiddleware.close",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 199,
+      "name": "flush",
+      "qualified_name": "tinydb.middlewares.CachingMiddleware.flush",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 406,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 535,
+    "source_symbol": {
+      "id": 251,
+      "name": "where",
+      "qualified_name": "tinydb.queries.where",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 227,
+      "name": "Query",
+      "qualified_name": "tinydb.queries.Query",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 418,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 120,
+    "source_symbol": {
+      "id": 224,
+      "name": "__and__",
+      "qualified_name": "tinydb.queries.QueryInstance.__and__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 219,
+      "name": "is_cacheable",
+      "qualified_name": "tinydb.queries.QueryInstance.is_cacheable",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 419,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 124,
+    "source_symbol": {
+      "id": 224,
+      "name": "__and__",
+      "qualified_name": "tinydb.queries.QueryInstance.__and__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 217,
+      "name": "QueryInstance",
+      "qualified_name": "tinydb.queries.QueryInstance",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 421,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 130,
+    "source_symbol": {
+      "id": 225,
+      "name": "__or__",
+      "qualified_name": "tinydb.queries.QueryInstance.__or__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 219,
+      "name": "is_cacheable",
+      "qualified_name": "tinydb.queries.QueryInstance.is_cacheable",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 422,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 134,
+    "source_symbol": {
+      "id": 225,
+      "name": "__or__",
+      "qualified_name": "tinydb.queries.QueryInstance.__or__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 217,
+      "name": "QueryInstance",
+      "qualified_name": "tinydb.queries.QueryInstance",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 424,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 137,
+    "source_symbol": {
+      "id": 226,
+      "name": "__invert__",
+      "qualified_name": "tinydb.queries.QueryInstance.__invert__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 219,
+      "name": "is_cacheable",
+      "qualified_name": "tinydb.queries.QueryInstance.is_cacheable",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 425,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 138,
+    "source_symbol": {
+      "id": 226,
+      "name": "__invert__",
+      "qualified_name": "tinydb.queries.QueryInstance.__invert__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 217,
+      "name": "QueryInstance",
+      "qualified_name": "tinydb.queries.QueryInstance",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 432,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 216,
+    "source_symbol": {
+      "id": 232,
+      "name": "__getitem__",
+      "qualified_name": "tinydb.queries.Query.__getitem__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 231,
+      "name": "__getattr__",
+      "qualified_name": "tinydb.queries.Query.__getattr__",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 434,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 249,
+    "source_symbol": {
+      "id": 233,
+      "name": "_generate_test",
+      "qualified_name": "tinydb.queries.Query._generate_test",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 217,
+      "name": "QueryInstance",
+      "qualified_name": "tinydb.queries.QueryInstance",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 436,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 262,
+    "source_symbol": {
+      "id": 234,
+      "name": "__eq__",
+      "qualified_name": "tinydb.queries.Query.__eq__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 233,
+      "name": "_generate_test",
+      "qualified_name": "tinydb.queries.Query._generate_test",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 437,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 264,
+    "source_symbol": {
+      "id": 234,
+      "name": "__eq__",
+      "qualified_name": "tinydb.queries.Query.__eq__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 313,
+      "name": "freeze",
+      "qualified_name": "tinydb.utils.freeze",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 439,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 275,
+    "source_symbol": {
+      "id": 235,
+      "name": "__ne__",
+      "qualified_name": "tinydb.queries.Query.__ne__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 233,
+      "name": "_generate_test",
+      "qualified_name": "tinydb.queries.Query._generate_test",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 440,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 277,
+    "source_symbol": {
+      "id": 235,
+      "name": "__ne__",
+      "qualified_name": "tinydb.queries.Query.__ne__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 313,
+      "name": "freeze",
+      "qualified_name": "tinydb.utils.freeze",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 442,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 288,
+    "source_symbol": {
+      "id": 236,
+      "name": "__lt__",
+      "qualified_name": "tinydb.queries.Query.__lt__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 233,
+      "name": "_generate_test",
+      "qualified_name": "tinydb.queries.Query._generate_test",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 444,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 301,
+    "source_symbol": {
+      "id": 237,
+      "name": "__le__",
+      "qualified_name": "tinydb.queries.Query.__le__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 233,
+      "name": "_generate_test",
+      "qualified_name": "tinydb.queries.Query._generate_test",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 446,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 314,
+    "source_symbol": {
+      "id": 238,
+      "name": "__gt__",
+      "qualified_name": "tinydb.queries.Query.__gt__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 233,
+      "name": "_generate_test",
+      "qualified_name": "tinydb.queries.Query._generate_test",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 448,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 327,
+    "source_symbol": {
+      "id": 239,
+      "name": "__ge__",
+      "qualified_name": "tinydb.queries.Query.__ge__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 233,
+      "name": "_generate_test",
+      "qualified_name": "tinydb.queries.Query._generate_test",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 450,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 338,
+    "source_symbol": {
+      "id": 240,
+      "name": "exists",
+      "qualified_name": "tinydb.queries.Query.exists",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 233,
+      "name": "_generate_test",
+      "qualified_name": "tinydb.queries.Query._generate_test",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 452,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 360,
+    "source_symbol": {
+      "id": 241,
+      "name": "matches",
+      "qualified_name": "tinydb.queries.Query.matches",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 233,
+      "name": "_generate_test",
+      "qualified_name": "tinydb.queries.Query._generate_test",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 454,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 381,
+    "source_symbol": {
+      "id": 242,
+      "name": "search",
+      "qualified_name": "tinydb.queries.Query.search",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 233,
+      "name": "_generate_test",
+      "qualified_name": "tinydb.queries.Query._generate_test",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 456,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 403,
+    "source_symbol": {
+      "id": 243,
+      "name": "test",
+      "qualified_name": "tinydb.queries.Query.test",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 233,
+      "name": "_generate_test",
+      "qualified_name": "tinydb.queries.Query._generate_test",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 457,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 405,
+    "source_symbol": {
+      "id": 243,
+      "name": "test",
+      "qualified_name": "tinydb.queries.Query.test",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 313,
+      "name": "freeze",
+      "qualified_name": "tinydb.utils.freeze",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 459,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 438,
+    "source_symbol": {
+      "id": 244,
+      "name": "any",
+      "qualified_name": "tinydb.queries.Query.any",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 233,
+      "name": "_generate_test",
+      "qualified_name": "tinydb.queries.Query._generate_test",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 460,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 440,
+    "source_symbol": {
+      "id": 244,
+      "name": "any",
+      "qualified_name": "tinydb.queries.Query.any",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 313,
+      "name": "freeze",
+      "qualified_name": "tinydb.utils.freeze",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 462,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 471,
+    "source_symbol": {
+      "id": 245,
+      "name": "all",
+      "qualified_name": "tinydb.queries.Query.all",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 233,
+      "name": "_generate_test",
+      "qualified_name": "tinydb.queries.Query._generate_test",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 463,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 473,
+    "source_symbol": {
+      "id": 245,
+      "name": "all",
+      "qualified_name": "tinydb.queries.Query.all",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 313,
+      "name": "freeze",
+      "qualified_name": "tinydb.utils.freeze",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 465,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 484,
+    "source_symbol": {
+      "id": 246,
+      "name": "one_of",
+      "qualified_name": "tinydb.queries.Query.one_of",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 233,
+      "name": "_generate_test",
+      "qualified_name": "tinydb.queries.Query._generate_test",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 466,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 486,
+    "source_symbol": {
+      "id": 246,
+      "name": "one_of",
+      "qualified_name": "tinydb.queries.Query.one_of",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 313,
+      "name": "freeze",
+      "qualified_name": "tinydb.utils.freeze",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 468,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 497,
+    "source_symbol": {
+      "id": 247,
+      "name": "fragment",
+      "qualified_name": "tinydb.queries.Query.fragment",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 233,
+      "name": "_generate_test",
+      "qualified_name": "tinydb.queries.Query._generate_test",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 469,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 499,
+    "source_symbol": {
+      "id": 247,
+      "name": "fragment",
+      "qualified_name": "tinydb.queries.Query.fragment",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 313,
+      "name": "freeze",
+      "qualified_name": "tinydb.utils.freeze",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 471,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 510,
+    "source_symbol": {
+      "id": 248,
+      "name": "noop",
+      "qualified_name": "tinydb.queries.Query.noop",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 217,
+      "name": "QueryInstance",
+      "qualified_name": "tinydb.queries.QueryInstance",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 481,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 117,
+    "source_symbol": {
+      "id": 258,
+      "name": "__init__",
+      "qualified_name": "tinydb.storages.JSONStorage.__init__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 266,
+      "name": "touch",
+      "qualified_name": "tinydb.storages.touch",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 495,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 113,
+    "source_symbol": {
+      "id": 271,
+      "name": "__init__",
+      "qualified_name": "tinydb.table.Table.__init__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 291,
+      "name": "_read_table",
+      "qualified_name": "tinydb.table.Table._read_table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 496,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 114,
+    "source_symbol": {
+      "id": 271,
+      "name": "__init__",
+      "qualified_name": "tinydb.table.Table.__init__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 292,
+      "name": "_update_table",
+      "qualified_name": "tinydb.table.Table._update_table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 501,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 161,
+    "source_symbol": {
+      "id": 275,
+      "name": "insert",
+      "qualified_name": "tinydb.table.Table.insert",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 290,
+      "name": "_get_next_id",
+      "qualified_name": "tinydb.table.Table._get_next_id",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 502,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 175,
+    "source_symbol": {
+      "id": 275,
+      "name": "insert",
+      "qualified_name": "tinydb.table.Table.insert",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 292,
+      "name": "_update_table",
+      "qualified_name": "tinydb.table.Table._update_table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 504,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 226,
+    "source_symbol": {
+      "id": 276,
+      "name": "insert_multiple",
+      "qualified_name": "tinydb.table.Table.insert_multiple",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 290,
+      "name": "_get_next_id",
+      "qualified_name": "tinydb.table.Table._get_next_id",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 505,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 231,
+    "source_symbol": {
+      "id": 276,
+      "name": "insert_multiple",
+      "qualified_name": "tinydb.table.Table.insert_multiple",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 292,
+      "name": "_update_table",
+      "qualified_name": "tinydb.table.Table._update_table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 508,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 274,
+    "source_symbol": {
+      "id": 278,
+      "name": "search",
+      "qualified_name": "tinydb.table.Table.search",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 291,
+      "name": "_read_table",
+      "qualified_name": "tinydb.table.Table._read_table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 510,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 359,
+    "source_symbol": {
+      "id": 279,
+      "name": "get",
+      "qualified_name": "tinydb.table.Table.get",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 291,
+      "name": "_read_table",
+      "qualified_name": "tinydb.table.Table._read_table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 511,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 377,
+    "source_symbol": {
+      "id": 279,
+      "name": "get",
+      "qualified_name": "tinydb.table.Table.get",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 210,
+      "name": "set",
+      "qualified_name": "tinydb.operations.set",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 513,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 419,
+    "source_symbol": {
+      "id": 280,
+      "name": "contains",
+      "qualified_name": "tinydb.table.Table.contains",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 279,
+      "name": "get",
+      "qualified_name": "tinydb.table.Table.get",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 515,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 479,
+    "source_symbol": {
+      "id": 281,
+      "name": "update",
+      "qualified_name": "tinydb.table.Table.update",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 292,
+      "name": "_update_table",
+      "qualified_name": "tinydb.table.Table._update_table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 517,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 579,
+    "source_symbol": {
+      "id": 282,
+      "name": "update_multiple",
+      "qualified_name": "tinydb.table.Table.update_multiple",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 292,
+      "name": "_update_table",
+      "qualified_name": "tinydb.table.Table._update_table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 519,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 615,
+    "source_symbol": {
+      "id": 283,
+      "name": "upsert",
+      "qualified_name": "tinydb.table.Table.upsert",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 281,
+      "name": "update",
+      "qualified_name": "tinydb.table.Table.update",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 520,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 623,
+    "source_symbol": {
+      "id": 283,
+      "name": "upsert",
+      "qualified_name": "tinydb.table.Table.upsert",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 275,
+      "name": "insert",
+      "qualified_name": "tinydb.table.Table.insert",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 522,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 662,
+    "source_symbol": {
+      "id": 284,
+      "name": "remove",
+      "qualified_name": "tinydb.table.Table.remove",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 292,
+      "name": "_update_table",
+      "qualified_name": "tinydb.table.Table._update_table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 524,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 704,
+    "source_symbol": {
+      "id": 285,
+      "name": "truncate",
+      "qualified_name": "tinydb.table.Table.truncate",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 292,
+      "name": "_update_table",
+      "qualified_name": "tinydb.table.Table._update_table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 526,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 716,
+    "source_symbol": {
+      "id": 286,
+      "name": "count",
+      "qualified_name": "tinydb.table.Table.count",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 278,
+      "name": "search",
+      "qualified_name": "tinydb.table.Table.search",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 529,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 730,
+    "source_symbol": {
+      "id": 288,
+      "name": "__len__",
+      "qualified_name": "tinydb.table.Table.__len__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 291,
+      "name": "_read_table",
+      "qualified_name": "tinydb.table.Table._read_table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 531,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 740,
+    "source_symbol": {
+      "id": 289,
+      "name": "__iter__",
+      "qualified_name": "tinydb.table.Table.__iter__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 291,
+      "name": "_read_table",
+      "qualified_name": "tinydb.table.Table._read_table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 533,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 760,
+    "source_symbol": {
+      "id": 290,
+      "name": "_get_next_id",
+      "qualified_name": "tinydb.table.Table._get_next_id",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 291,
+      "name": "_read_table",
+      "qualified_name": "tinydb.table.Table._read_table",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 536,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 854,
+    "source_symbol": {
+      "id": 292,
+      "name": "_update_table",
+      "qualified_name": "tinydb.table.Table._update_table",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 287,
+      "name": "clear_cache",
+      "qualified_name": "tinydb.table.Table.clear_cache",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 539,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 156,
+    "source_symbol": {
+      "id": 313,
+      "name": "freeze",
+      "qualified_name": "tinydb.utils.freeze",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 307,
+      "name": "FrozenDict",
+      "qualified_name": "tinydb.utils.FrozenDict",
+      "symbol_type": "class"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 540,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 156,
+    "source_symbol": {
+      "id": 313,
+      "name": "freeze",
+      "qualified_name": "tinydb.utils.freeze",
+      "symbol_type": "function"
+    },
+    "target_symbol": {
+      "id": 313,
+      "name": "freeze",
+      "qualified_name": "tinydb.utils.freeze",
+      "symbol_type": "function"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": 549,
+    "repository_id": 1,
+    "relationship_type": "calls",
+    "source_line": 79,
+    "source_symbol": {
+      "id": 301,
+      "name": "__setitem__",
+      "qualified_name": "tinydb.utils.LRUCache.__setitem__",
+      "symbol_type": "method"
+    },
+    "target_symbol": {
+      "id": 306,
+      "name": "set",
+      "qualified_name": "tinydb.utils.LRUCache.set",
+      "symbol_type": "method"
+    },
+    "created_at": "2026-10-14T12:00:00Z"
+  }
+]

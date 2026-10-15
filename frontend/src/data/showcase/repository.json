@@ -1,0 +1,41 @@
+{
+  "id": 1,
+  "name": "tinydb",
+  "path": "evaluation_repos/tinydb",
+  "created_at": "2026-10-14T12:00:00Z",
+  "version": "v4.8.2",
+  "commit": "6d7c4fc3e04d398b1282876514660a33a7897b41",
+  "repository_url": "https://github.com/msiemens/tinydb.git",
+  "license": "MIT License",
+  "attribution": "TinyDB is Copyright (c) 2013 Markus Siemens <markus@msiemens.com> and contributors. Distributed under the MIT License.",
+  "is_indexed": true,
+  "symbol_count": 314,
+  "file_count": 21,
+  "analysis_summary": {
+    "repository_id": 1,
+    "files_analyzed": 21,
+    "python_files": 21,
+    "classes": 15,
+    "functions": 286,
+    "methods": 113,
+    "imports": 141,
+    "relationships": 559,
+    "call_relationships": 226,
+    "chunks_created": 314,
+    "embeddings_generated": 314,
+    "errors": []
+  },
+  "benchmark_metrics": {
+    "queries_evaluated": 13,
+    "positive_queries": 10,
+    "negative_queries": 3,
+    "start_symbol_accuracy": 1.0,
+    "edge_precision": 1.0,
+    "edge_recall": 1.0,
+    "edge_f1": 1.0,
+    "exact_trace_match": 1.0,
+    "negative_query_accuracy": 1.0,
+    "avg_semantic_retrieval_ms": 135.0,
+    "avg_architecture_tracing_ms": 2.5
+  }
+}

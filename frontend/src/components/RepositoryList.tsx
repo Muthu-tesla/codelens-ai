@@ -10,6 +10,7 @@ interface RepositoryListProps {
   onAnalyzeRepo: (id: number) => Promise<void>;
   isLoading: boolean;
   onOpenRegisterModal: () => void;
+  isShowcaseMode?: boolean;
 }
 
 export function RepositoryList({
@@ -19,6 +20,7 @@ export function RepositoryList({
   onAnalyzeRepo,
   isLoading,
   onOpenRegisterModal,
+  isShowcaseMode = false,
 }: RepositoryListProps) {
   if (isLoading && repositories.length === 0) {
     return (
@@ -136,18 +138,27 @@ export function RepositoryList({
                 </div>
 
                 <div className="flex items-center gap-1.5">
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onAnalyzeRepo(repository.id);
-                    }}
-                    disabled={isAnalyzing}
-                    className="rounded border border-slate-700 bg-slate-800/80 px-2 py-0.5 text-[10px] font-medium text-slate-200 hover:border-sky-500 hover:text-white transition disabled:opacity-50"
-                    title={isIndexed ? "Re-run AST analysis & indexing" : "Run AST analysis & index symbols"}
-                  >
-                    {isIndexed ? "Re-index" : "Index Now"}
-                  </button>
+                  {isShowcaseMode ? (
+                    <span
+                      className="rounded border border-emerald-500/30 bg-emerald-950/40 px-2 py-0.5 text-[10px] font-medium text-emerald-300 select-none"
+                      title="Precomputed static AST index snapshot (read-only showcase)"
+                    >
+                      Pre-indexed
+                    </span>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onAnalyzeRepo(repository.id);
+                      }}
+                      disabled={isAnalyzing}
+                      className="rounded border border-slate-700 bg-slate-800/80 px-2 py-0.5 text-[10px] font-medium text-slate-200 hover:border-sky-500 hover:text-white transition disabled:opacity-50"
+                      title={isIndexed ? "Re-run AST analysis & indexing" : "Run AST analysis & index symbols"}
+                    >
+                      {isIndexed ? "Re-index" : "Index Now"}
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

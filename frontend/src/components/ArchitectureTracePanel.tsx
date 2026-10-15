@@ -10,6 +10,11 @@ import {
   EvidenceItem,
 } from "@/types/api";
 import { ApiError, explainArchitecture, traceArchitecture } from "@/lib/api";
+import {
+  getShowcaseBenchmarkQueries,
+  getShowcaseExplain,
+  getShowcaseTrace,
+} from "@/lib/showcase-adapter";
 
 interface ArchitectureTracePanelProps {
   repositoryId: number | null;
@@ -22,6 +27,7 @@ interface ArchitectureTracePanelProps {
   onSelectTraceNode: (node: ArchitectureTraceNode) => void;
   onClearTrace: () => void;
   isTraceActive: boolean;
+  isShowcaseMode?: boolean;
 }
 
 const EXAMPLE_QUESTIONS = [
@@ -37,6 +43,7 @@ export function ArchitectureTracePanel({
   onSelectTraceNode,
   onClearTrace,
   isTraceActive,
+  isShowcaseMode = false,
 }: ArchitectureTracePanelProps) {
   const [mode, setMode] = useState<"question" | "symbol">("question");
   const [question, setQuestion] = useState("How does table insertion persist a document?");
@@ -54,6 +61,8 @@ export function ArchitectureTracePanel({
   const callableSymbols = symbols.filter((s) =>
     ["function", "method"].includes(s.symbol_type.toLowerCase())
   );
+
+  const benchmarkQueries = isShowcaseMode ? getShowcaseBenchmarkQueries() : [];
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -74,13 +83,13 @@ export function ArchitectureTracePanel({
           return;
         }
 
-        try {
-          const res = await explainArchitecture(repositoryId, cleanQ);
+        if (isShowcaseMode) {
+          const res = await getShowcaseExplain(repositoryId, cleanQ);
           setExplainResult(res);
 
           if (!res.trace || res.answer.includes("couldn't determine this confidently")) {
             setUnsupportedNotice(
-              "No confident start symbol could be resolved from this question in the repository. Try rephrasing or use Deterministic Trace with a specific start symbol."
+              "Out-of-benchmark query or ungrounded concept. In ₹0 static showcase mode, questions are evaluated against verified TinyDB benchmark test cases without running a live LLM."
             );
           } else {
             onTraceSuccess({
@@ -89,18 +98,35 @@ export function ArchitectureTracePanel({
               startSymbol: res.trace.start_symbol,
             });
           }
-        } catch (err: unknown) {
-          // If LLM is not configured (HTTP 503), offer graceful deterministic fallback
-          const is503 =
-            (err instanceof ApiError && err.status === 503) ||
-            (err instanceof Error && err.message.includes("LLM service is not configured")) ||
-            (typeof err === "object" && err !== null && "status" in err && (err as { status: unknown }).status === 503);
-          if (is503) {
-            setError(
-              "LLM service is not configured (OPENAI_API_KEY not set). You can switch to Deterministic Trace tab to trace execution without requiring an LLM."
-            );
-          } else {
-            throw err;
+        } else {
+          try {
+            const res = await explainArchitecture(repositoryId, cleanQ);
+            setExplainResult(res);
+
+            if (!res.trace || res.answer.includes("couldn't determine this confidently")) {
+              setUnsupportedNotice(
+                "No confident start symbol could be resolved from this question in the repository. Try rephrasing or use Deterministic Trace with a specific start symbol."
+              );
+            } else {
+              onTraceSuccess({
+                nodes: res.trace.nodes,
+                edges: res.trace.edges,
+                startSymbol: res.trace.start_symbol,
+              });
+            }
+          } catch (err: unknown) {
+            // If LLM is not configured (HTTP 503), offer graceful deterministic fallback
+            const is503 =
+              (err instanceof ApiError && err.status === 503) ||
+              (err instanceof Error && err.message.includes("LLM service is not configured")) ||
+              (typeof err === "object" && err !== null && "status" in err && (err as { status: unknown }).status === 503);
+            if (is503) {
+              setError(
+                "LLM service is not configured (OPENAI_API_KEY not set). You can switch to Deterministic Trace tab to trace execution without requiring an LLM."
+              );
+            } else {
+              throw err;
+            }
           }
         }
       } else {
@@ -112,13 +138,23 @@ export function ArchitectureTracePanel({
           return;
         }
 
-        const res = await traceArchitecture(repositoryId, targetSym);
-        setTraceResult(res);
-        onTraceSuccess({
-          nodes: res.nodes,
-          edges: res.edges,
-          startSymbol: res.start_symbol,
-        });
+        if (isShowcaseMode) {
+          const res = await getShowcaseTrace(repositoryId, targetSym);
+          setTraceResult(res);
+          onTraceSuccess({
+            nodes: res.nodes,
+            edges: res.edges,
+            startSymbol: res.start_symbol,
+          });
+        } else {
+          const res = await traceArchitecture(repositoryId, targetSym);
+          setTraceResult(res);
+          onTraceSuccess({
+            nodes: res.nodes,
+            edges: res.edges,
+            startSymbol: res.start_symbol,
+          });
+        }
       }
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "Architecture trace request failed.";
@@ -149,9 +185,16 @@ export function ArchitectureTracePanel({
           <div className="flex items-center gap-2">
             <span className="flex h-2 w-2 rounded-full bg-purple-400" />
             <h3 className="text-sm font-bold text-white">Architecture Intelligence Trace</h3>
+            {isShowcaseMode && (
+              <span className="rounded border border-purple-500/40 bg-purple-950/60 px-1.5 py-0.5 text-[9px] font-semibold text-purple-300">
+                ₹0 Showcase
+              </span>
+            )}
           </div>
           <p className="mt-0.5 text-[11px] text-slate-400">
-            Infer static call flows and grounded evidence citations from codebase questions.
+            {isShowcaseMode
+              ? "Explore precomputed static AST call flows & grounded source evidence from verified TinyDB benchmarks."
+              : "Infer static call flows and grounded evidence citations from codebase questions."}
           </p>
         </div>
 
@@ -215,19 +258,50 @@ export function ArchitectureTracePanel({
             />
 
             {/* Example Queries */}
-            <div className="mt-2 flex flex-wrap items-center gap-1.5">
-              <span className="text-[10px] text-slate-500">Examples:</span>
-              {EXAMPLE_QUESTIONS.map((eq) => (
-                <button
-                  key={eq}
-                  type="button"
-                  onClick={() => setQuestion(eq)}
-                  className="rounded border border-slate-800 bg-[#111827] px-2 py-0.5 text-[10px] text-slate-400 hover:border-purple-600 hover:text-purple-300 transition truncate max-w-full"
-                >
-                  {eq}
-                </button>
-              ))}
-            </div>
+            {isShowcaseMode ? (
+              <div className="mt-2 space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-semibold text-purple-300">
+                    Precomputed Benchmark Examples (Offline):
+                  </span>
+                  <span className="text-[9px] text-slate-500 font-mono">10 flows • 3 negative tests</span>
+                </div>
+                <div className="flex flex-wrap gap-1.5 max-h-36 overflow-y-auto pr-1">
+                  {benchmarkQueries.map((bq) => (
+                    <button
+                      key={bq.id}
+                      type="button"
+                      onClick={() => setQuestion(bq.question)}
+                      className={`rounded border px-2 py-0.5 text-[10px] transition truncate max-w-full text-left ${
+                        question === bq.question
+                          ? "border-purple-500 bg-purple-950/70 text-purple-200"
+                          : bq.is_negative
+                          ? "border-amber-900/50 bg-[#151119] text-amber-300/80 hover:border-amber-700 hover:text-amber-200"
+                          : "border-slate-800 bg-[#111827] text-slate-400 hover:border-purple-600 hover:text-purple-300"
+                      }`}
+                      title={bq.is_negative ? `[Negative Refusal Test] ${bq.question}` : `[${bq.category}] ${bq.question}`}
+                    >
+                      <span className="font-mono text-[9px] opacity-70 mr-1">[{bq.id}]</span>
+                      {bq.question}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                <span className="text-[10px] text-slate-500">Examples:</span>
+                {EXAMPLE_QUESTIONS.map((eq) => (
+                  <button
+                    key={eq}
+                    type="button"
+                    onClick={() => setQuestion(eq)}
+                    className="rounded border border-slate-800 bg-[#111827] px-2 py-0.5 text-[10px] text-slate-400 hover:border-purple-600 hover:text-purple-300 transition truncate max-w-full"
+                  >
+                    {eq}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         ) : (
           <div>
@@ -300,10 +374,10 @@ export function ArchitectureTracePanel({
         <div className="rounded-xl border border-purple-900/60 bg-[#162032]/80 p-3.5 space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-[11px] font-bold uppercase tracking-wider text-purple-300">
-              Grounded Architecture Explanation
+              {isShowcaseMode ? "Precomputed Grounded Architecture Explanation" : "Grounded Architecture Explanation"}
             </span>
             <span className="rounded bg-purple-950 px-1.5 py-0.5 text-[9px] font-semibold text-purple-300 border border-purple-800/60">
-              AI Grounded
+              {isShowcaseMode ? "Precomputed Snapshot" : "AI Grounded"}
             </span>
           </div>
 
@@ -316,9 +390,16 @@ export function ArchitectureTracePanel({
       {/* Deterministic Summary (if direct trace mode) */}
       {traceResult && (
         <div className="rounded-xl border border-purple-900/60 bg-[#162032]/80 p-3.5 space-y-1.5">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-purple-300">
-            Deterministic Trace Summary
-          </span>
+          <div className="flex items-center justify-between">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-purple-300">
+              {isShowcaseMode ? "Precomputed Static AST Summary" : "Deterministic Trace Summary"}
+            </span>
+            {isShowcaseMode && (
+              <span className="rounded bg-purple-950 px-1.5 py-0.5 text-[9px] font-semibold text-purple-300 border border-purple-800/60">
+                Static AST
+              </span>
+            )}
+          </div>
           <p className="text-xs text-slate-300 font-sans leading-relaxed">
             {traceResult.summary}
           </p>
@@ -330,7 +411,7 @@ export function ArchitectureTracePanel({
         <div className="space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-              Inferred Call Flow ({activeNodes.length} steps)
+              {isShowcaseMode ? "Static AST Call Flow" : "Inferred Call Flow"} ({activeNodes.length} steps)
             </span>
             <span className="text-[10px] text-purple-400 font-mono">
               Start: {activeStartSymbol}
@@ -461,8 +542,15 @@ export function ArchitectureTracePanel({
       )}
 
       {/* Static Inference Disclaimer */}
-      <div className="rounded-lg border border-slate-800/80 bg-[#0f172a]/60 p-2.5 text-[10px] text-slate-400 leading-normal">
-        <strong className="text-slate-300">Note:</strong> Reconstructed statically from AST <code className="text-purple-300">CALLS</code> graph relationships. Represents code structure rather than dynamic runtime execution.
+      <div className="rounded-lg border border-purple-900/40 bg-[#0f172a]/80 p-2.5 text-[10px] text-slate-400 leading-normal space-y-1">
+        <p>
+          <strong className="text-purple-300">Static AST Analysis Notice:</strong> Reconstructed statically from AST <code className="text-purple-300">CALLS</code> graph relationships. Represents code structure rather than dynamic runtime execution.
+        </p>
+        {isShowcaseMode && (
+          <p className="text-slate-500">
+            Operating in ₹0 Static Showcase Mode. Results are precomputed from verified TinyDB AST analysis; no live backend, embeddings, or LLM tokens are consumed.
+          </p>
+        )}
       </div>
     </div>
   );

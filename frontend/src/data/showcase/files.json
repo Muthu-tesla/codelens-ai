@@ -1,0 +1,170 @@
+[
+  {
+    "id": 1,
+    "repository_id": 1,
+    "relative_path": "docs/_themes/flask_theme_support.py",
+    "extension": ".py",
+    "size_bytes": 3953,
+    "line_count": 86
+  },
+  {
+    "id": 2,
+    "repository_id": 1,
+    "relative_path": "docs/conf.py",
+    "extension": ".py",
+    "size_bytes": 9252,
+    "line_count": 276
+  },
+  {
+    "id": 3,
+    "repository_id": 1,
+    "relative_path": "tests/__init__.py",
+    "extension": ".py",
+    "size_bytes": 0,
+    "line_count": 0
+  },
+  {
+    "id": 4,
+    "repository_id": 1,
+    "relative_path": "tests/conftest.py",
+    "extension": ".py",
+    "size_bytes": 652,
+    "line_count": 27
+  },
+  {
+    "id": 5,
+    "repository_id": 1,
+    "relative_path": "tests/test_middlewares.py",
+    "extension": ".py",
+    "size_bytes": 3039,
+    "line_count": 123
+  },
+  {
+    "id": 6,
+    "repository_id": 1,
+    "relative_path": "tests/test_operations.py",
+    "extension": ".py",
+    "size_bytes": 1058,
+    "line_count": 37
+  },
+  {
+    "id": 7,
+    "repository_id": 1,
+    "relative_path": "tests/test_queries.py",
+    "extension": ".py",
+    "size_bytes": 15764,
+    "line_count": 529
+  },
+  {
+    "id": 8,
+    "repository_id": 1,
+    "relative_path": "tests/test_storages.py",
+    "extension": ".py",
+    "size_bytes": 6983,
+    "line_count": 287
+  },
+  {
+    "id": 9,
+    "repository_id": 1,
+    "relative_path": "tests/test_tables.py",
+    "extension": ".py",
+    "size_bytes": 4832,
+    "line_count": 199
+  },
+  {
+    "id": 10,
+    "repository_id": 1,
+    "relative_path": "tests/test_tinydb.py",
+    "extension": ".py",
+    "size_bytes": 23397,
+    "line_count": 839
+  },
+  {
+    "id": 11,
+    "repository_id": 1,
+    "relative_path": "tests/test_utils.py",
+    "extension": ".py",
+    "size_bytes": 3637,
+    "line_count": 161
+  },
+  {
+    "id": 12,
+    "repository_id": 1,
+    "relative_path": "tinydb/__init__.py",
+    "extension": ".py",
+    "size_bytes": 1037,
+    "line_count": 33
+  },
+  {
+    "id": 13,
+    "repository_id": 1,
+    "relative_path": "tinydb/database.py",
+    "extension": ".py",
+    "size_bytes": 8904,
+    "line_count": 274
+  },
+  {
+    "id": 14,
+    "repository_id": 1,
+    "relative_path": "tinydb/middlewares.py",
+    "extension": ".py",
+    "size_bytes": 4482,
+    "line_count": 142
+  },
+  {
+    "id": 15,
+    "repository_id": 1,
+    "relative_path": "tinydb/mypy_plugin.py",
+    "extension": ".py",
+    "size_bytes": 1130,
+    "line_count": 39
+  },
+  {
+    "id": 16,
+    "repository_id": 1,
+    "relative_path": "tinydb/operations.py",
+    "extension": ".py",
+    "size_bytes": 1784,
+    "line_count": 75
+  },
+  {
+    "id": 17,
+    "repository_id": 1,
+    "relative_path": "tinydb/queries.py",
+    "extension": ".py",
+    "size_bytes": 17348,
+    "line_count": 535
+  },
+  {
+    "id": 18,
+    "repository_id": 1,
+    "relative_path": "tinydb/storages.py",
+    "extension": ".py",
+    "size_bytes": 5451,
+    "line_count": 181
+  },
+  {
+    "id": 19,
+    "repository_id": 1,
+    "relative_path": "tinydb/table.py",
+    "extension": ".py",
+    "size_bytes": 30809,
+    "line_count": 854
+  },
+  {
+    "id": 20,
+    "repository_id": 1,
+    "relative_path": "tinydb/utils.py",
+    "extension": ".py",
+    "size_bytes": 5259,
+    "line_count": 169
+  },
+  {
+    "id": 21,
+    "repository_id": 1,
+    "relative_path": "tinydb/version.py",
+    "extension": ".py",
+    "size_bytes": 23,
+    "line_count": 1
+  }
+]

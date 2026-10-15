@@ -11,6 +11,7 @@ interface HeaderProps {
   onOpenRegisterModal: () => void;
   onRefresh: () => void;
   isRefreshing: boolean;
+  isShowcaseMode?: boolean;
 }
 
 export function Header({
@@ -21,6 +22,7 @@ export function Header({
   onOpenRegisterModal,
   onRefresh,
   isRefreshing,
+  isShowcaseMode = false,
 }: HeaderProps) {
   return (
     <header className="border-b border-slate-800 bg-[#0f172a]/95 backdrop-blur sticky top-0 z-30 px-6 py-3.5">
@@ -35,9 +37,15 @@ export function Header({
           <div>
             <div className="flex items-center gap-2">
               <h1 className="text-lg font-bold tracking-tight text-white">CodeLens AI</h1>
-              <span className="rounded bg-indigo-950/80 px-2 py-0.5 text-[10px] font-semibold text-indigo-300 border border-indigo-800/60">
-                Phase 3F.1
-              </span>
+              {isShowcaseMode ? (
+                <span className="rounded bg-purple-950/80 px-2 py-0.5 text-[10px] font-semibold text-purple-300 border border-purple-800/60">
+                  ₹0 Static Showcase
+                </span>
+              ) : (
+                <span className="rounded bg-indigo-950/80 px-2 py-0.5 text-[10px] font-semibold text-indigo-300 border border-indigo-800/60">
+                  Phase 3F.1
+                </span>
+              )}
             </div>
             <p className="text-xs text-slate-400">Codebase Intelligence & AST Explorer</p>
           </div>
@@ -49,7 +57,9 @@ export function Header({
           <div className="flex items-center gap-2 rounded-full border border-slate-800 bg-[#162032] px-3 py-1 text-xs">
             <span
               className={`h-2 w-2 rounded-full ${
-                backendHealthy === true
+                isShowcaseMode
+                  ? "bg-emerald-400 shadow-sm shadow-emerald-400/80"
+                  : backendHealthy === true
                   ? "bg-emerald-400 shadow-sm shadow-emerald-400/80"
                   : backendHealthy === false
                   ? "bg-rose-500 shadow-sm shadow-rose-500/80"
@@ -57,13 +67,33 @@ export function Header({
               }`}
             />
             <span className="text-slate-300">
-              {backendHealthy === true
+              {isShowcaseMode
+                ? "Precomputed Snapshot"
+                : backendHealthy === true
                 ? "API Connected"
                 : backendHealthy === false
                 ? "API Offline"
                 : "Checking API..."}
             </span>
           </div>
+
+          {/* TinyDB MIT Attribution in Showcase Mode */}
+          {isShowcaseMode && (
+            <a
+              href="https://github.com/msiemens/tinydb"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:flex items-center gap-1.5 rounded-full border border-slate-800 bg-[#162032] px-3 py-1 text-xs text-sky-400 hover:text-sky-300 hover:border-slate-700 transition"
+              title="TinyDB is Copyright (c) Markus Siemens, licensed under MIT License"
+            >
+              <span>TinyDB v4.8.2</span>
+              <span className="text-slate-600">•</span>
+              <span className="text-slate-400 text-[11px]">MIT License</span>
+              <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          )}
 
           {/* Repo selector dropdown */}
           {repositories.length > 0 && (
